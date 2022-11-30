@@ -35,6 +35,5 @@ module.export = (sequelize) =>{
             type: DataTypes.STRING,
             allowNull:false
         },
-
     })
 }
