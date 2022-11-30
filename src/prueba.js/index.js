@@ -1,9 +1,13 @@
 
-const algo=()=>{
+const algo = () => {
     console.log(1)
 };
 
 
-const segundo=()=>{
+const segundo = () => {
     console.log(2)
+};
+
+const tercero = () => {
+    console.log(3)
 };
