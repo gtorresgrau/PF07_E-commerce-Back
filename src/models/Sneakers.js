@@ -1,7 +1,7 @@
 const {DataTypes} = require('sequelize');
 
-module.export = (sequelize) =>{
-    sequelize.define('shoes',{
+module.exports = (sequelize) =>{
+    sequelize.define('sneakers',{
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -12,19 +12,23 @@ module.export = (sequelize) =>{
             allowNull:false
         },
         description:{ 
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING(10000),
             allowNull:false
         },
         price:{
             type: DataTypes.DOUBLE,
             allowNull:false
         },
-        stock:{
-            type:DataTypes.INTEGER,
-            allowNull:false
+        size:{
+            type: DataTypes.INTEGER,
+            allowNull: false,
         },
         image:{
             type: DataTypes.STRING,
+            allowNull:false
+        },
+        stock:{
+            type:DataTypes.INTEGER,
             allowNull:false
         },
         brand:{
@@ -35,5 +39,16 @@ module.export = (sequelize) =>{
             type: DataTypes.STRING,
             allowNull:false
         },
+        genre:{
+            type: DataTypes.ENUM("Kids","Women","Men","All"),
+            allowNull: false,
+        },
+        colour:{
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        type:{
+            type: DataTypes.ENUM("Sports", "Running", "Training", "All")
+        }
     })
 }

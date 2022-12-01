@@ -1,6 +1,6 @@
 const {DataTypes} = require('sequelize');
 
-module.export = (sequelize) =>{
+module.exports = (sequelize) =>{
     sequelize.define('user',{
         id: {
             type: DataTypes.INTEGER,
@@ -40,9 +40,20 @@ module.export = (sequelize) =>{
             allowNull:true,
         },
         history:{
-            type: DataTypes.ARRAY,
+            type: DataTypes.ARRAY(DataTypes.STRING),
             allowNull:false
         },
-
-    })
+        favourites:{
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull: true,
+        },
+        isAdmin:{
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        superAdmin:{
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+        }
+})
 }
