@@ -1,6 +1,6 @@
 const {DataTypes} = require('sequelize');
 
-module.export = (sequelize) =>{
+module.exports = (sequelize) =>{
     sequelize.define('user',{
         id: {
             type: DataTypes.INTEGER,
@@ -9,40 +9,51 @@ module.export = (sequelize) =>{
           },
         username:{
             type: DataTypes.STRING,
-            allowNull:false
+            allowNull:true,
         },
         password:{ 
             type: DataTypes.STRING,
-            allowNull:false
+            allowNull:true,
         },
         image:{
             type: DataTypes.STRING,
-            allowNull:false
+            allowNull:true
         },
         emailAddress:{
-            type:DataTypes.EMAIL,
+            type:DataTypes.STRING,
             allowNull:false
         },
         homeAddress:{
             type: DataTypes.STRING,
-            allowNull:false
+            allowNull:true,
         },
         region:{
             type: DataTypes.STRING,
-            allowNull:false
+            allowNull:true,
         },
         city:{
             type: DataTypes.STRING,
-            allowNull:false
+            allowNull:true
         },
         phoneNumber:{
             type: DataTypes.INTEGER,
-            allowNull:false
+            allowNull:true,
         },
         history:{
-            type: DataTypes.ARRAY,
+            type: DataTypes.ARRAY(DataTypes.STRING),
             allowNull:false
         },
-
-    })
+        favourites:{
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull: true,
+        },
+        isAdmin:{
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        superAdmin:{
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+        }
+})
 }
