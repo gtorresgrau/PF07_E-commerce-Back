@@ -11,12 +11,12 @@ module.exports = (sequelize) =>{
             type: DataTypes.STRING,
             allowNull:false
         },
-        description:{ 
-            type: DataTypes.STRING(10000),
-            allowNull:false
-        },
         price:{
             type: DataTypes.DOUBLE,
+            allowNull:false
+        },
+        description:{ 
+            type: DataTypes.STRING(10000),
             allowNull:false
         },
         size:{
