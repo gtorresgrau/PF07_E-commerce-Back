@@ -2,14 +2,9 @@ const {DataTypes} = require('sequelize');
 
 module.exports = (sequelize) =>{
     sequelize.define('sneakers',{
-        id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-          },
         title:{
             type: DataTypes.STRING,
-            allowNull:false
+            allowNull:false 
         },
         price:{
             type: DataTypes.DOUBLE,
@@ -48,7 +43,8 @@ module.exports = (sequelize) =>{
             allowNull: false,
         },
         type:{
-            type: DataTypes.ENUM("Sports", "Running", "Training", "All")
+            type: DataTypes.ENUM("Sports", "Running", "Training", "All"),
+            defaultValue: "Sports"
         }
     })
 }
