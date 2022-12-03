@@ -1,6 +1,8 @@
 const { Router } = require('express');
 const sneakers = require('./sneakers');
+const sneaker = require('./getSneaker');
 const users = require('./users');
+
 // const axios = require("axios");
 //const SneaksAPI = require('sneaks-api');
 //const sneaks = new SneaksAPI();
@@ -10,6 +12,7 @@ const users = require('./users');
 const router = Router();
 
 router.use('/sneakers', sneakers);
+router.use('/sneaker', sneaker);
 router.use('/users', users);
 
 
