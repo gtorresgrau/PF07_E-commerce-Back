@@ -13,7 +13,6 @@ const insertData = async () => {
         size: s.size,
         stock: s.stock,
         brand: s.brand, 
-        model: s.model,
         genre: s.genre, 
         colour: s.colour,
         type: s.type

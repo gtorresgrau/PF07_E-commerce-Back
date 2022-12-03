@@ -30,10 +30,7 @@ module.exports = (sequelize) =>{
             type: DataTypes.STRING,
             allowNull:false
         },
-        model:{
-            type: DataTypes.STRING,
-            allowNull:false
-        },
+
         genre:{
             type: DataTypes.ENUM("Kids","Women","Men","All"),
             allowNull: false,
