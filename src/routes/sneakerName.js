@@ -1,9 +1,9 @@
 const { Router } = require('express');
 const router = Router();
 const {Sneakers}= require("../db");
-const {allSneakerDB}= require("sequelize");
 
 const {Op}= require("sequelize");
+
     
 router.get('/', async ( req,res)=>{
 
@@ -11,11 +11,6 @@ router.get('/', async ( req,res)=>{
 
         const {title}= req.query;
 
-        if(await Sneakers.count()===0){
-            const sneakys= await allSneakerDB();
-
-            await Sneakers.findOrCreate(sneakys);
-        }
 
         if(title){
             const sneakerName= await Sneakers.findAll({where:{title:{[Op.iLike]:`%${title}%`}}})
