@@ -1,5 +1,7 @@
 const { Sneakers } = require("../db");
 
+
+
 const sneakerId = async (id) => {
   const sneakerId = await Sneakers.findOne({where: {id: id}});
 
@@ -17,9 +19,7 @@ const sneakerId = async (id) => {
     colour:sneakerId.colour,
     type:sneakerId.type
 };
-return sneakerID;
+
+  return sneakerID;
 };
 module.exports = { sneakerId };
-
-
-
