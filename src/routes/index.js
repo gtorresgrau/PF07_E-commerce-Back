@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const sneakers = require('./sneakers');
+const filterBrand = require('./filterBrand');
 const sneaker = require('./getSneaker');
 const users = require('./users');
 
@@ -12,6 +13,7 @@ const users = require('./users');
 const router = Router();
 
 router.use('/sneakers', sneakers);
+router.use('/brand', filterBrand);
 router.use('/sneaker', sneaker);
 router.use('/users', users);
 
