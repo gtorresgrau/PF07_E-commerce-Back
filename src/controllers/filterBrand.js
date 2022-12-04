@@ -2,7 +2,7 @@ const { Sneakers } = require("../db");
 
 const brandFilter = async (filtro) => {     
   
-    const brandFil = await Sneakers.findAll({where: {colour:filtro}})
+    const brandFil = await Sneakers.findAll({where: {brand:filtro}})
        
     const brandF = brandFil.map(filter => {
       return {
