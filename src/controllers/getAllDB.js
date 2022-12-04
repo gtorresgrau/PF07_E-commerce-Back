@@ -1,5 +1,4 @@
 const { Sneakers } = require("../db");
-const { insertData } = require("./insertDataDB");
 
 const allSneakersDB = async () => {
   const sneakersDb = await Sneakers.findAll();
