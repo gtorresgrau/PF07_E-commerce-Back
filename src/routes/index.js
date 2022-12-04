@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const sneakers = require('./sneakers');
+const insert = require('./postSneaker');
 const sneaker = require('./getSneaker');
 const users = require('./users');
 
@@ -12,8 +13,9 @@ const users = require('./users');
 const router = Router();
 
 router.use('/sneakers', sneakers);
+router.use('/sneakers', insert);
 router.use('/sneaker', sneaker);
-router.use('/users', users);
+router.use('/users', users); 
 
 
 module.exports = router;
