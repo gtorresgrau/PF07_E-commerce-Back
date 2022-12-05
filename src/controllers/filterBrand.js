@@ -8,7 +8,8 @@ const brandFilter = async (filtro) => {
       return {
         id: filter.id,
         title: filter.title,
-        price: filter.image,
+        image:filter.image,
+        price:filter.price,
         description: filter.description,
         size: filter.size,
         stock: filter.stock,
