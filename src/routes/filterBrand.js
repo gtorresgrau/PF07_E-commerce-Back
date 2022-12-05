@@ -4,10 +4,10 @@ const {brandFilter}=require('../controllers/filterBrand')
     
      
 router.get('/:brand', async ( req,res)=>{
-    const {brand} = req.params;
+    const {filtro} = req.params;
     try {
      
-        res.json( await brandFilter(brand))
+        res.json( await brandFilter(filtro))
     }
 
      catch (error) { 
@@ -17,3 +17,5 @@ router.get('/:brand', async ( req,res)=>{
     module.exports=router
 
 
+
+    
