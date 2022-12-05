@@ -8,6 +8,8 @@ const sneaker = require('./getSneaker');
 const users = require('./users');
 
 
+const sneakerName= require("./sneakerName");
+
 
 // const axios = require("axios");
 //const SneaksAPI = require('sneaks-api');
@@ -17,10 +19,15 @@ const users = require('./users');
 
 
 router.use('/sneakers', sneakers);
+
+
+router.use("/sneakerName", sneakerName);
+
 router.use('/brand', filterBrand);
 router.use('/sneakers', insert);
 router.use('/sneaker', sneaker);
 router.use('/users', users); 
+
 
 
 

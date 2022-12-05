@@ -1,5 +1,4 @@
 const { Sneakers } = require("../db");
-const { insertData } = require("./insertDataDB");
 
 const allSneakersDB = async () => {
   const sneakersDb = await Sneakers.findAll();
@@ -13,7 +12,6 @@ const allSneakersDB = async () => {
       size: el.size,
       stock: el.stock,
       brand: el.brand, 
-      model: el.model,
       genre: el.genre, 
       colour: el.colour,
       type: el.type

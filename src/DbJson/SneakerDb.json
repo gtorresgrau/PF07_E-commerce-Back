@@ -7,7 +7,6 @@
       "size": 38,
       "stock": 55,
       "brand": "Puma",
-      "model": "x",
       "genre": "Men",
       "colour": "White",
       "type": "Training"
@@ -20,7 +19,6 @@
       "size": 38,
       "stock": 40,
       "brand": "Puma",
-      "model": "x",
       "genre": "Men",
       "colour": "White",
       "type": "Training"
@@ -33,7 +31,6 @@
       "size": 38,
       "stock": 67,
       "brand": "Puma",
-      "model": "x",
       "genre": "Men",
       "colour": "White",
       "type": "Training"
@@ -46,7 +43,6 @@
       "size": 38,
       "stock": 40,
       "brand": "Puma",
-      "model": "x",
       "genre": "Men",
       "colour": "Black",
       "type": "Training"
@@ -59,7 +55,6 @@
       "size": 38,
       "stock": 32,
       "brand": "Puma",
-      "model": "x",
       "genre": "Men",
       "colour": "Black",
       "type": "Training"
@@ -72,7 +67,6 @@
       "size": 38,
       "stock": 24,
       "brand": "Puma",
-      "model": "x",
       "genre": "Men",
       "colour": "Black",
       "type": "Training"
@@ -85,7 +79,6 @@
       "size": 38,
       "stock": 12,
       "brand": "Puma",
-      "model": "x",
       "genre": "Men",
       "colour": "Black",
       "type": "Training"
@@ -98,7 +91,6 @@
       "size": 38,
       "stock": 90,
       "brand": "Puma",
-      "model": "x",
       "genre": "Men",
       "colour": "Black",
       "type": "Running"
@@ -111,7 +103,6 @@
       "size": 38,
       "stock": 86,
       "brand": "Puma",
-      "model": "x",
       "genre": "Men",
       "colour": "Black",
       "type": "Running"
@@ -124,7 +115,6 @@
       "size": 38,
       "stock": 0,
       "brand": "Puma",
-      "model": "x",
       "genre": "Men",
       "colour": "Red",
       "type": "Running"
@@ -137,7 +127,6 @@
       "size": 38,
       "stock": 0,
       "brand": "Puma",
-      "model": "x",
       "genre": "Men",
       "colour": "Red",
       "type": "Running"
@@ -150,7 +139,6 @@
       "size": 38,
       "stock": 42,
       "brand": "Puma",
-      "model": "x",
       "genre": "Men",
       "colour": "Red",
       "type": "Running"
@@ -163,7 +151,6 @@
       "size": 38,
       "stock": 65,
       "brand": "Puma",
-      "model": "x",
       "genre": "Men",
       "colour": "Black",
       "type": "Running"
@@ -176,7 +163,6 @@
       "size": 38,
       "stock": 87,
       "brand": "Puma",
-      "model": "x",
       "genre": "Women",
       "colour": "Red",
       "type": "Running"
@@ -189,7 +175,6 @@
       "size": 38,
       "stock": 63,
       "brand": "Puma",
-      "model": "x",
       "genre": "Women",
       "colour": "Green",
       "type": "Sports"
@@ -202,7 +187,6 @@
       "size": 38,
       "stock": 87,
       "brand": "Puma",
-      "model": "x",
       "genre": "Women",
       "colour": "Green",
       "type": "Sports"
@@ -215,7 +199,6 @@
       "size": 38,
       "stock": 70,
       "brand": "Puma",
-      "model": "x",
       "genre": "Women",
       "colour": "Black",
       "type": "Sports"
@@ -228,7 +211,6 @@
       "size": 38,
       "stock": 74,
       "brand": "Puma",
-      "model": "x",
       "genre": "Men",
       "colour": "Green",
       "type": "Sports"
