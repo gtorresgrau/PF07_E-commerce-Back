@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { allSneakersDB } = require('../controllers/getAllDB')
+const { allSneakersDB } = require('../controllers/getAllDB');
+
 
 
 router.get('/', async (req, res) => {
@@ -9,4 +10,5 @@ router.get('/', async (req, res) => {
   })
 
   
+
 module.exports = router;
