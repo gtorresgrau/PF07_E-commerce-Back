@@ -11,25 +11,25 @@ router.get('/', async ( req,res)=>{
     try{
         
         const {brand,colour,type,genre}= req.query;
-
+        console.log(brand)
 
         if(brand){
             const brandFil = await brandFilter(brand);
 
             if(colour){
-                const colourFil=brandFil.filter(e=>e.colour===colour)
+                const colourFil=brandFil.filter(e=>(e.colour===colour||e.colour===colour[0]||e.colour===colour[1])||e.colour===colour[2]||e.colour===colour[3]||e.colour===colour[4])
                 
                 if(type){
-                    const typeFil=colourFil.filter(e=>e.type===type);
+                    const typeFil=colourFil.filter(e=>(e.type===type||e.type===type[0]||e.type===type[1]||e.type===type[2]||e.type===type[3]||e.type===type[4]));
                     
                     if(genre){
-                        const genreFil=typeFil.filter(e=>e.genre===genre)
+                        const genreFil=typeFil.filter(e=>(e.genre===genre||e.genre===genre[0]||e.genre===genre[1]||e.genre===genre[2]))
                         return res.status(200).json(genreFil);}
 
                     return res.status(200).json(typeFil);}
                 
                 if(genre){
-                    const genreFil=colourFil.filter(e=>e.genre===genre)
+                    const genreFil=colourFil.filter(e=>(e.genre===genre||e.genre===genre[0]||e.genre===genre[1]||e.genre===genre[2]))
                     return res.status(200).json(genreFil);}
                     
 
@@ -39,10 +39,10 @@ router.get('/', async ( req,res)=>{
             
             
             if(type){
-                const typeFil=brandFil.filter(e=>e.type===type)
+                const typeFil=brandFil.filter(e=>(e.type===type||e.type===type[0]||e.type===type[1]||e.type===type[2]||e.type===type[3]||e.type===type[4]));
                 
                 if(genre){
-                    const genreFil=typeFil.filter(e=>e.genre===genre)
+                    const genreFil=typeFil.filter(e=>(e.genre===genre||e.genre===genre[0]||e.genre===genre[1]||e.genre===genre[2]))
                     return res.status(200).json(genreFil);}
                     
 
@@ -50,7 +50,7 @@ router.get('/', async ( req,res)=>{
                 
             
             if(genre){
-                const genreFil=brandFil.filter(e=>e.genre===genre)
+                const genreFil=brandFil.filter(e=>(e.genre===genre||e.genre===genre[0]||e.genre===genre[1]||e.genre===genre[2]))
                 return res.status(200).json(genreFil);}
 
             
@@ -68,42 +68,44 @@ router.get('/', async ( req,res)=>{
             if(colour){
                 const colourFil = await colourFilter(colour)
                 
+                
                 if(genre){
-                    const genreFil=colourFil.filter(e=>e.genre===genre)
+                    const genreFil=colourFil.filter(e=>(e.genre===genre||e.genre===genre[0]||e.genre===genre[1]||e.genre===genre[2]))
                     
                     if(type){
-                        const typeFil=genreFil.filter(e=>e.type===type)
+                        const typeFil=genreFil.filter(e=>(e.type===type||e.type===type[0]||e.type===type[1]||e.type===type[2]||e.type===type[3]||e.type===type[4]));
                         return res.status(200).json(typeFil);}
                         
+                    return res.status(200).json(genreFil);}
+                        
+                    
+                if(type){
+                    const typeFil=colourFil.filter(e=>(e.type===type||e.type===type[0]||e.type===type[1]||e.type===type[2]||e.type===type[3]||e.type===type[4]));
+                    return res.status(200).json(typeFil);}
+                            
+                return res.status(200).json(colourFil);
+                }
+                        
+                        
+                        
+                        
+                        
+                        
+                if(type){
+                    const typeFil = await typeFilter(type);
+                            
+                    if(genre){
+                        const genreFil=typeFil.filter(e=>(e.genre===genre||e.genre===genre[0]||e.genre===genre[1]||e.genre===genre[2]))
                         return res.status(200).json(genreFil);}
-                        
-                        if(type){
-                            const typeFil=colourFil.filter(e=>e.type===type)
-                            return res.status(200).json(typeFil);}
-                            
-                            return res.status(200).json(colourFil);
-                        }
-                        
-                        
-                        
-                        
-                        
-                        
-                        if(type){
-                            const typeFil = await typeFilter(type)
-                            
-                            if(genre){
-                                const genreFil=typeFil.filter(e=>e.genre===genre)
-                                return res.status(200).json(genreFil);}
-                                return res.status(200).json(typeFil);
-                            }
+                return res.status(200).json(typeFil);
+                }
                             
                             
                             
-                            if(genre){
-                                const genreFil = await genreFilter(genre)
-                                return res.status(200).json(genreFil);
-                            }
+                if(genre){
+                    const genreFil = await genreFilter(genre)
+                    return res.status(200).json(genreFil);
+                }
                             
                             
                             
