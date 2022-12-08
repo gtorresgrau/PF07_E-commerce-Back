@@ -7,6 +7,7 @@ const insert = require('./postSneaker');
 const sneaker = require('./getSneaker');
 const users = require('./users');
 const filter = require('./filterAnidado');
+const user= require("./getUserID");
 
 
 const sneakerName= require("./sneakerName");
@@ -30,7 +31,7 @@ router.use('/sneaker', sneaker);
 router.use('/users', users); 
 router.use("/filter", filter);
 
-
+router.use("/user", user);
 
 
 module.exports = router;
