@@ -17,7 +17,7 @@ router.get('/', async ( req,res)=>{
             const brandFil = await brandFilter(brand);
 
             if(colour){
-                const colourFil=brandFil.filter(e=>(e.colour===colour||e.colour===colour[0]||e.colour===colour[1])||e.colour===colour[2]||e.colour===colour[3]||e.colour===colour[4])
+                const colourFil=brandFil.filter(e=>(e.colour===colour||e.colour===colour[0]||e.colour===colour[1])||e.colour===colour[2]||e.colour===colour[3]||e.colour===colour[4]||e.colour===colour[5])
                 
                 if(type){
                     const typeFil=colourFil.filter(e=>(e.type===type||e.type===type[0]||e.type===type[1]||e.type===type[2]||e.type===type[3]||e.type===type[4]));
