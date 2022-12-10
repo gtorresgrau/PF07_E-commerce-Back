@@ -3,8 +3,11 @@ const { Op } = require('sequelize');
 const router = Router();
 const {allUsers}= require("../controllers/getUsers");
 const {User}= require("../db");
+const {GetAllUsers}= require("../handlers/index")
 
-router.get("/", async(req,res)=>{
+const {getRole}= require("../handlers/routeProtection")
+
+/*router.get("/", async(req,res)=>{
 try{
 
     const {username}= req.query;
@@ -32,5 +35,21 @@ try{
 }
 
 })
+*/
+
+router.get("/",getRole, async(req,res)=>{
+
+    try{
+        if(req.role !== "admin") throw sError("You are not an admin", 400);
+
+        const usersDb= await GetAllUsers();
+       return res.status(200).json(usersDb);
+
+    }catch(error){
+        return res.status(404).json(error.message);
+    }
+})
+
+
 
 module.exports = router;

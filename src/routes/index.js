@@ -9,6 +9,7 @@ const users = require('./users');
 const filter = require('./filterAnidado');
 const user= require("./getUserID");
 
+const cart= require("./rutasCarritoDeCompras/rutaGetSneakersCart");
 
 const sneakerName= require("./sneakerName");
 
@@ -33,5 +34,6 @@ router.use("/filter", filter);
 
 router.use("/user", user);
 
+router.use("/cart", cart);
 
 module.exports = router;

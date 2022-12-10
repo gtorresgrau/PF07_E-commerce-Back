@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { GetAllSneakersCart } = require('../controllers');
+const { GetAllSneakersCart } = require('../../controllers/carritoDeCompras/getSneakersCart');
 
 //completar de donde se requiere el controller
 

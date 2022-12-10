@@ -40,6 +40,7 @@ const allU = async()=>{
         phoneNumber: u.phoneNumber,
         history: u.history,
         favourites: u.favourites,
+        status: u.status,
         isAdmin: u.isAdmin,
         superAdmin: u.superAdmin,
         isRegistered: u.isRegistered,

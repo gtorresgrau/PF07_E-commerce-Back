@@ -1,7 +1,7 @@
-const { modeloDeCarrito } = require("../db");
+const {Cart} = require("../../db");
 
 const GetAllSneakersCart = async () => {
-  const sneakersCart = await modeloDeCarrito.findAll();
+  const sneakersCart = await Cart.findAll();
   const allSneakersCart = sneakersCart.map(el => {
     return {
       id: el.id,

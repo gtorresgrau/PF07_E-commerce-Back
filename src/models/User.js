@@ -51,6 +51,10 @@ module.exports = (sequelize) =>{
             type: DataTypes.ARRAY(DataTypes.STRING),
             allowNull: true,
         },
+        status:{
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
         isAdmin:{
             type: DataTypes.BOOLEAN,
             allowNull: true,

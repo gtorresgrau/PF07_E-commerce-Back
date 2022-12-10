@@ -21,6 +21,8 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "firebase": "^9.15.0",
+    "firebase-admin": "^11.3.0",
     "jest": "^29.0.2",
     "mime-db": "^1.52.0",
     "morgan": "^1.10.0",

@@ -17,6 +17,7 @@ const allUsers= async()=>{
             phoneNumber: e.phoneNumber,
             history: e.history,
             favourites: e.favourites,
+            status: e.status,
             isAdmin: e.isAdmin,
             superAdmin: e.superAdmin,
             isRegistered: e.isRegistered,
@@ -24,6 +25,8 @@ const allUsers= async()=>{
     })
     return users;
 }
+
+
 
 module.exports={
     allUsers,

@@ -18,6 +18,7 @@ const UID = async (id) => {
     phoneNumber: userId.phoneNumber,
     history: userId.history,
     favourites: userId.favourites,
+    status: userId.status,
     isAdmin: userId.isAdmin,
     superAdmin: userId.superAdmin,
     isRegistered: userId.isRegistered,
