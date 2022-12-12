@@ -23,5 +23,5 @@ Public Key
 TEST-56b07190-fec5-45b7-9064-ddf67297e8e2
 
 
-Integrada con:  CheckoutAPI
+Integrada con:  CheckoutPro
 Número de la aplicación:  3548612967624981
