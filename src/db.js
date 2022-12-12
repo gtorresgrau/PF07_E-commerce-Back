@@ -3,22 +3,16 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_DEPLOY
+  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME
 } = process.env;
 
 //console.log(process.env);
 
 
-// const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
-//   logging: false, // set to console.log to see the raw SQL queries
-//   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-// });
-
-const sequelize = new Sequelize(DB_DEPLOY, {
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });
-
 const basename = path.basename(__filename);
 
 //console.log(basename);
@@ -53,18 +47,15 @@ const {User}= sequelize.models;
 const {Cart}= sequelize.models;
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
+User.hasMany(Sneakers, {as:"sneakerOwner", foreignKey:"ownerId"});
+Sneakers.belongsTo(User, {as:"owner"});
 
-//Relación User-Sneakers.
-User.belongsToMany(Sneakers, {through: "user_sneakers"});
-Sneakers.belongsToMany(User, {through: "user_sneakers"});
+User.hasOne(Cart, {as:"cartUser", foreignKey:"cartUserId"})
+Cart.belongsTo(User,{as:"cartUser"});
 
-//Relación de User y Cart (1 a 1)
-User.hasOne(Cart, {as: "cartUser", foreignKey:"cartUserId"})
-Cart.belongsTo(User, {as:"cartUser"});
 
-//Relación de Sneakers y Cart (n a n)
-Sneakers.belongsToMany(Cart, {through:"cart_sneakers"});
-Cart.belongsToMany(Sneakers, {through: "cart_sneakers"});
+Sneakers.belongsToMany(Cart, {through: "cart_sneaker"});
+Cart.belongsToMany(Sneakers, {through: "cart_sneaker"});
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

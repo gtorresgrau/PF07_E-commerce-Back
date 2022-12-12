@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node index.js -L",
     "test": "mocha -w ./tests/**/*.spec.js"
   },
   "author": "Henry",
@@ -17,12 +17,10 @@
     "axios": "^0.27.2",
     "binary-extensions": "^2.2.0",
     "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.6",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "firebase": "^9.15.0",
-    "firebase-admin": "^11.3.0",
     "jest": "^29.0.2",
     "mime-db": "^1.52.0",
     "morgan": "^1.10.0",

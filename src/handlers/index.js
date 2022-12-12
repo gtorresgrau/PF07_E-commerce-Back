@@ -7,7 +7,7 @@ const GetAllUsers = async()=>{
     include:[
       {
       model: Sneakers,
-      as:"user_sneakers"
+      as:"sneakerOwner"
       },
       {
         model: Cart,
@@ -23,6 +23,30 @@ const GetAllUsers = async()=>{
   })
 }
 
+  async function getUserById(id) {
+    if (!id) throw new Error("Missing ID");
+    const user = await User.findByPk(id, {
+      include: [
+        {
+          model: Sneakers,
+          as: "sneakerOwner",
+        },
+        {
+          model: Cart,
+          as: "cartUser",
+          include: {
+            model: Sneakers,
+            through: {
+              attributes: [],
+            },
+          },
+        },
+      ],
+    });
+    if (!user) throw new Error("No user matches the provided ID");
+    return user;
+  }
+  
 const getRole= async(emailAddress)=> {
 
     const {fullName}= req.body;
@@ -38,4 +62,4 @@ const getRole= async(emailAddress)=> {
     return role;
 }
 
-module.exports= {GetAllUsers, getRole};
+module.exports= {GetAllUsers, getRole, getUserById};

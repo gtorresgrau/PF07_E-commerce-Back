@@ -4,58 +4,49 @@ const {getRole}= require("../handlers");
 
 const admin= require("firebase-admin");
 
-const {GOOGLE_APPLICATION_CREDENTIALS}= require("../config");
+const {GOOGLE_CREDENTIALS}= require("../../config");
 
-const serviceAccount= JSON.parse(GOOGLE_APPLICATION_CREDENTIALS);
+const {User,Sneakers,Cart}= require("../db");
+const db = require("../db");
 
-const { initializeApp } = require('firebase-admin/app');
+const serviceAccount= JSON.parse(GOOGLE_CREDENTIALS);
 
-const {User, Cart, Sneakers}= require("../db");
+const loginSession= Router();
 
-const loginSessionR= Router();
-
-const app= admin.initializeApp({
+const app = admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "henry-sneakers.firebaseapp.com"
-})
-
-loginSessionR.post("/",async(req,res)=>{
-    const {token}= req.body
+    databaseURL: "https://henrysneakers-2022-default-rtdb.firebaseio.com/"
+  });
+  
+  
+loginSession.post("/", async (req,res)=>{
+    const {token}= req.body;
 
     try{
         const user= await app.auth().verifyIdToken(token);
-        
-        const [dbUser, created]= await User.findOrCreate({where:{emailAddress: user.email}});
+        const [dbUSer,created]= await User.findOrCreate({where:{emailAddress: user.email}})
 
         if(created){
-            await dbUser.createCartUser({total:0});
-            await dbUser.update({status:"active",isAdmin:false});
+            await dbUSer.createCartUser({total:0});
+            await db.update({status:"active", isAdmin: false,})
         }
-
         const userWithCart= await User.findOne({where:{
-            emailAddress: user.email,
+            emailAddress: user.email
         },
-        include:[{
-            model:Cart,
-            as:"cartUser",
-            include:{
-                model:Sneakers,
-            }
-        },{
-
-        }]
-    })
-
+    include:[{
+        model: Cart,
+        as:"cartUser",
+        include:{
+            model:Sneakers
+        }
+    }]
+    });
     const role= await getRole(userWithCart.toJSON().emailAddress);
-
-    return res.status(201).json({role:role, user:userWithCart.toJSON()})
-    
-    }catch(error){
-        return res.status(400).json({error: error.message});
+    return res.json({role: role, user: userWithCart.toJSON()})
+    }
+    catch(error){
+        return res.status(401).json({error: error.message});
     }
 })
 
-module.exports={
-    loginSessionR,
-    app
-}
+module.exports= {loginSession,app};

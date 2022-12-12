@@ -1,55 +1,21 @@
-const Router = require('express');
-const { Op } = require('sequelize');
-const router = Router();
-const {allUsers}= require("../controllers/getUsers");
-const {User}= require("../db");
-const {GetAllUsers}= require("../handlers/index")
+const { Router } = require("express");
+const {GetAllUsers} = require("../handlers/index");
+const {
+  getRole
+} = require("../handlers/routeProtection");
 
-const {getRole}= require("../handlers/routeProtection")
+const router= Router();
 
-/*router.get("/", async(req,res)=>{
-try{
-
-    const {username}= req.query;
-    
-    if(await User.count()===0){
-        const uData= await allUsers();
-        await User.bulkCreate(uData);
+router
+  .get("/", getRole, async (req, res) => {
+    try {
+      if(req.role !== 'admin') throw Error('You are not an Admin')
+      const usersDb = await GetAllUsers();
+      res.json(usersDb);
+    } catch (error) {
+      res.status(400).json(error);
     }
-    
-    if(username){
-        const userN= await User.findAll({where:{username:{[Op.iLike]:`%${username}%`}}})
-        
-        if(!userN){
-            return res.status(404).json({error: error.message});
-        }
-        return res.status(200).json(userN);
-    }
-    const allUs= await User.findAll();
-
-    return res.status(200).json(allUs);
-
-}catch(error){
-    
-    return res.status(404).json(error);
-}
-
-})
-*/
-
-router.get("/",getRole, async(req,res)=>{
-
-    try{
-        if(req.role !== "admin") throw sError("You are not an admin", 400);
-
-        const usersDb= await GetAllUsers();
-       return res.status(200).json(usersDb);
-
-    }catch(error){
-        return res.status(404).json(error.message);
-    }
-})
-
+  })
 
 
 module.exports = router;

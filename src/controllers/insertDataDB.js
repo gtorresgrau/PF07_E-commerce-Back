@@ -1,7 +1,7 @@
 const dataJSON = require('../DbJson/SneakerDb.json');
 const { Sneakers } = require("../db");
+const uData= require("../DbJson/users.json");
 const {User}= require("../db");
-const dataU = require("../DbJson/users.json");
 
 const insertData = async () => {
   dataJSON.forEach(s => {
@@ -20,36 +20,32 @@ const insertData = async () => {
         type: s.type
       }
     })
-  }) 
+  })
+  
 }
 
-const allU = async()=>{
-  dataU.forEach(u=>{
+
+const getU= async()=>{
+  uData.forEach(e=>{
     User.findOrCreate({
-      where: {
-        username: u.username,
-        fullName: u.fullName,
-      },
+      where:{username: e.username, fullName: e.fullName},
       defaults:{
-        password: u.password,
-        image: u.image,
-        emailAddress: u.emailAddress,
-        homeAddress: u.homeAddress,
-        region: u.region,
-        city: u.city,
-        phoneNumber: u.phoneNumber,
-        history: u.history,
-        favourites: u.favourites,
-        status: u.status,
-        isAdmin: u.isAdmin,
-        superAdmin: u.superAdmin,
-        isRegistered: u.isRegistered,
+        password: e.password,
+        image: e.image,
+        emailAddress: e.emailAddress,
+        homeAddress: e.homeAddress,
+        region: e.region,
+        city: e.city,
+        phoneNumber: e.phoneNumber,
+        history: e.history,
+        favourites: e.favourites,
+        isAdmin: e.isAdmin,
+        superAdmin: e.superAdmin,
       }
     })
   })
 }
-
 module.exports = {
   insertData,
-  allU
+  getU
 }
