@@ -1,3 +1,4 @@
+const e = require('express');
 const { Router } = require('express');
 const router = Router();
 
@@ -17,19 +18,28 @@ router.get('/', async ( req,res)=>{
             const brandFil = await brandFilter(brand);
 
             if(colour){
-                const colourFil=brandFil.filter(e=>(e.colour===colour||e.colour===colour[0]||e.colour===colour[1])||e.colour===colour[2]||e.colour===colour[3]||e.colour===colour[4]||e.colour===colour[5])
-                
+                const colourFil=brandFil.filter((e)=>{                
+                    if(typeof colour === 'string') e.colour ===colour;
+                    for(i=0;i<colour.length;i++) e.colour === colour[i]})
+
                 if(type){
-                    const typeFil=colourFil.filter(e=>(e.type===type||e.type===type[0]||e.type===type[1]||e.type===type[2]||e.type===type[3]||e.type===type[4]));
+                    const typeFil=colourFil.filter(e=>{                
+                        if(typeof type === 'string') e.type ===type;
+                        for(i=0;i<type.length;i++) e.type === type[i]})
                     
                     if(genre){
-                        const genreFil=typeFil.filter(e=>(e.genre===genre||e.genre===genre[0]||e.genre===genre[1]||e.genre===genre[2]))
+                        const genreFil=typeFil.filter(e=>{                
+                        if(typeof genre === 'string') e.genre ===genre;
+                        for(i=0;i<genre.length;i++) e.genre === genre[i]})
+
                         return res.status(200).json(genreFil);}
 
                     return res.status(200).json(typeFil);}
                 
                 if(genre){
-                    const genreFil=colourFil.filter(e=>(e.genre===genre||e.genre===genre[0]||e.genre===genre[1]||e.genre===genre[2]))
+                    const genreFil=colourFil.filter(e=>{                
+                        if(typeof genre === 'string') e.genre ===genre;
+                        for(i=0;i<genre.length;i++) e.genre === genre[i]})
                     return res.status(200).json(genreFil);}
                     
 
@@ -39,10 +49,14 @@ router.get('/', async ( req,res)=>{
             
             
             if(type){
-                const typeFil=brandFil.filter(e=>(e.type===type||e.type===type[0]||e.type===type[1]||e.type===type[2]||e.type===type[3]||e.type===type[4]));
+                const typeFil=brandFil.filter(e=>{                
+                    if(typeof type === 'string') e.type ===type;
+                    for(i=0;i<type.length;i++) e.type === type[i]})
                 
                 if(genre){
-                    const genreFil=typeFil.filter(e=>(e.genre===genre||e.genre===genre[0]||e.genre===genre[1]||e.genre===genre[2]))
+                    const genreFil=typeFil.filter(e=>{                
+                        if(typeof genre === 'string') e.genre ===genre;
+                        for(i=0;i<genre.length;i++) e.genre === genre[i]})
                     return res.status(200).json(genreFil);}
                     
 
@@ -50,7 +64,9 @@ router.get('/', async ( req,res)=>{
                 
             
             if(genre){
-                const genreFil=brandFil.filter(e=>(e.genre===genre||e.genre===genre[0]||e.genre===genre[1]||e.genre===genre[2]))
+                const genreFil=brandFil.filter(e=>{                
+                    if(typeof genre === 'string') e.genre ===genre;
+                    for(i=0;i<genre.length;i++) e.genre === genre[i]})
                 return res.status(200).json(genreFil);}
 
             
@@ -70,17 +86,23 @@ router.get('/', async ( req,res)=>{
                 
                 
                 if(genre){
-                    const genreFil=colourFil.filter(e=>(e.genre===genre||e.genre===genre[0]||e.genre===genre[1]||e.genre===genre[2]))
+                    const genreFil=colourFil.filter(e=>{                
+                        if(typeof genre === 'string') e.genre ===genre;
+                        for(i=0;i<genre.length;i++) e.genre === genre[i]})
                     
                     if(type){
-                        const typeFil=genreFil.filter(e=>(e.type===type||e.type===type[0]||e.type===type[1]||e.type===type[2]||e.type===type[3]||e.type===type[4]));
+                        const typeFil=genreFil.filter(e=>{                
+                            if(typeof type === 'string') e.type ===type;
+                            for(i=0;i<type.length;i++) e.type === type[i]})
                         return res.status(200).json(typeFil);}
                         
                     return res.status(200).json(genreFil);}
                         
                     
                 if(type){
-                    const typeFil=colourFil.filter(e=>(e.type===type||e.type===type[0]||e.type===type[1]||e.type===type[2]||e.type===type[3]||e.type===type[4]));
+                    const typeFil=colourFil.filter(e=>{                
+                        if(typeof type === 'string') e.type ===type;
+                        for(i=0;i<type.length;i++) e.type === type[i]})
                     return res.status(200).json(typeFil);}
                             
                 return res.status(200).json(colourFil);
@@ -95,7 +117,9 @@ router.get('/', async ( req,res)=>{
                     const typeFil = await typeFilter(type);
                             
                     if(genre){
-                        const genreFil=typeFil.filter(e=>(e.genre===genre||e.genre===genre[0]||e.genre===genre[1]||e.genre===genre[2]))
+                        const genreFil=typeFil.filter(e=>{                
+                            if(typeof genre === 'string') e.genre ===genre;
+                            for(i=0;i<genre.length;i++) e.genre === genre[i]})
                         return res.status(200).json(genreFil);}
                 return res.status(200).json(typeFil);
                 }
