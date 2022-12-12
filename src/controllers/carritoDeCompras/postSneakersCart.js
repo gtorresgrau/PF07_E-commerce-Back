@@ -1,7 +1,7 @@
-const { modeloDelCarrito } = require("../db");
+const { Cart } = require("../db");
 
 const postSneakerCart = async ({title, price, image}) => {
-    const [postSneaker] = await modeloDelCarrito.findOrCreate({
+    const [postSneaker] = await Cart.findOrCreate({
       where: {title: title},
       defaults: {
         title,
