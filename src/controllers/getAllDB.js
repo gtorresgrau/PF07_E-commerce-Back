@@ -11,7 +11,7 @@ const allSneakersDB = async () => {
       description: el.description,
       size: el.size,
       stock: el.stock,
-      brand: el.brand,  
+      brand: el.brand, 
       genre: el.genre, 
       colour: el.colour,
       type: el.type
