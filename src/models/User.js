@@ -1,4 +1,4 @@
-const {DataTypes} = require('sequelize');
+const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) =>{
     sequelize.define('user',{
@@ -11,6 +11,10 @@ module.exports = (sequelize) =>{
             type: DataTypes.STRING,
             allowNull:true,
         },
+        fullName:{
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
         password:{ 
             type: DataTypes.STRING,
             allowNull:true,
@@ -21,7 +25,7 @@ module.exports = (sequelize) =>{
         },
         emailAddress:{
             type:DataTypes.STRING,
-            allowNull:false
+            allowNull:true,
         },
         homeAddress:{
             type: DataTypes.STRING,
@@ -33,7 +37,7 @@ module.exports = (sequelize) =>{
         },
         city:{
             type: DataTypes.STRING,
-            allowNull:true
+            allowNull:true,
         },
         phoneNumber:{
             type: DataTypes.INTEGER,
@@ -41,7 +45,7 @@ module.exports = (sequelize) =>{
         },
         history:{
             type: DataTypes.ARRAY(DataTypes.STRING),
-            allowNull:false
+            allowNull:true,
         },
         favourites:{
             type: DataTypes.ARRAY(DataTypes.STRING),
@@ -49,11 +53,15 @@ module.exports = (sequelize) =>{
         },
         isAdmin:{
             type: DataTypes.BOOLEAN,
-            allowNull: false,
+            allowNull: true,
         },
         superAdmin:{
             type: DataTypes.BOOLEAN,
-            allowNull: false,
+            allowNull: true,
+        },
+        isRegistered:{
+            type: DataTypes.BOOLEAN,
+            allowNull:true,
         }
 })
 }

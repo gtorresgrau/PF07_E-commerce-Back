@@ -1,5 +1,7 @@
 const dataJSON = require('../DbJson/SneakerDb.json');
 const { Sneakers } = require("../db");
+const {User}= require("../db");
+const dataU = require("../DbJson/users.json");
 
 const insertData = async () => {
   dataJSON.forEach(s => {
@@ -18,10 +20,35 @@ const insertData = async () => {
         type: s.type
       }
     })
+  }) 
+}
+
+const allU = async()=>{
+  dataU.forEach(u=>{
+    User.findOrCreate({
+      where: {
+        username: u.username,
+        fullName: u.fullName,
+      },
+      defaults:{
+        password: u.password,
+        image: u.image,
+        emailAddress: u.emailAddress,
+        homeAddress: u.homeAddress,
+        region: u.region,
+        city: u.city,
+        phoneNumber: u.phoneNumber,
+        history: u.history,
+        favourites: u.favourites,
+        isAdmin: u.isAdmin,
+        superAdmin: u.superAdmin,
+        isRegistered: u.isRegistered,
+      }
+    })
   })
-  
 }
 
 module.exports = {
-  insertData
+  insertData,
+  allU
 }

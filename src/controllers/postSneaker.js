@@ -1,6 +1,6 @@
 const { Sneakers } = require("../db");
 
-const insertSneaker = async ({title, price, image, description, size, stock, brand, model, genre, colour, type}) => {
+const insertSneaker = async ({title, price, image, description, size, stock, brand, genre, colour, type}) => {
     const [sneakerCreated, status] = await Sneakers.findOrCreate({
       where: {title: title},
       defaults: {
@@ -11,7 +11,6 @@ const insertSneaker = async ({title, price, image, description, size, stock, bra
         size,
         stock,
         brand, 
-        model,
         genre, 
         colour,
         type
