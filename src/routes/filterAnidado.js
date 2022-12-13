@@ -44,9 +44,7 @@ router.get('/', async ( req,res)=>{
                     
 
                 return res.status(200).json(colourFil);}
-
-            
-            
+  
             
             if(type){
                 const typeFil=brandFil.filter(e=>{                
@@ -73,14 +71,7 @@ router.get('/', async ( req,res)=>{
             return res.status(200).json(brandFil);
             }
 
-            
-            
-            
-            
-            
-            
-            
-            
+     
             if(colour){
                 const colourFil = await colourFilter(colour)
                 
@@ -108,11 +99,7 @@ router.get('/', async ( req,res)=>{
                 return res.status(200).json(colourFil);
                 }
                         
-                        
-                        
-                        
-                        
-                        
+                  
                 if(type){
                     const typeFil = await typeFilter(type);
                             
@@ -123,18 +110,12 @@ router.get('/', async ( req,res)=>{
                         return res.status(200).json(genreFil);}
                 return res.status(200).json(typeFil);
                 }
-                            
-                            
-                            
+                   
                 if(genre){
                     const genreFil = await genreFilter(genre)
                     return res.status(200).json(genreFil);
                 }
-                            
-                            
-                            
-                            
-                            
+  
                         }
                             
                         catch(error){
