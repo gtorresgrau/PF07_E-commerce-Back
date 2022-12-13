@@ -8,7 +8,7 @@ const sneaker = require('./getSneaker');
 const users = require('./users');
 const filter = require('./filterAnidado');
 const user= require("./getUserID");
-
+const payment = require('./postPaymentMP');
 
 const sneakerName= require("./sneakerName");
 
@@ -30,8 +30,8 @@ router.use('/sneakers', insert);
 router.use('/sneaker', sneaker);
 router.use('/users', users); 
 router.use("/filter", filter);
-
 router.use("/user", user);
+router.use('https://pf-07-e-commerce-front.vercel.app/payment', payment);
 
 
 module.exports = router;
