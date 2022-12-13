@@ -24,7 +24,7 @@ const {PORT}= process.env;
 require('dotenv').config();
 
 // Syncing all the models at once.
-conn.sync({force: false}).then(() => {
+conn.sync({force: true}).then(() => {
   insertData();
   allU();
   server.listen(PORT, () => {
