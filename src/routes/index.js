@@ -31,7 +31,7 @@ router.use('/sneaker', sneaker);
 router.use('/users', users); 
 router.use("/filter", filter);
 router.use("/user", user);
-router.use('/payment', payment);
+router.use('https://pf-07-e-commerce-front.vercel.app/payment', payment);
 
 
 module.exports = router;
