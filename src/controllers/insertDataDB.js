@@ -39,10 +39,11 @@ const allU = async()=>{
         city: u.city,
         phoneNumber: u.phoneNumber,
         history: u.history,
-        favourites: u.favourites,
+        status: u.status,
+        guest: u.guest,
+        loggued: u.loggued,
         isAdmin: u.isAdmin,
         superAdmin: u.superAdmin,
-        isRegistered: u.isRegistered,
       }
     })
   })

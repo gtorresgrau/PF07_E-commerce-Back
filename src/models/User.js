@@ -43,25 +43,35 @@ module.exports = (sequelize) =>{
             type: DataTypes.INTEGER,
             allowNull:true,
         },
+               /*history= transaction model*/        
         history:{
-            type: DataTypes.ARRAY(DataTypes.STRING),
+            type: DataTypes.STRING,
             allowNull:true,
         },
-        favourites:{
-            type: DataTypes.ARRAY(DataTypes.STRING),
+        status:{
+            type: DataTypes.STRING,
             allowNull: true,
+            defaultValue: "active",
+        },
+        guest:{
+            type: DataTypes.BOOLEAN,
+            allowNull:true,
+            defaultValue: true,
+        },
+        loggued:{
+            type: DataTypes.BOOLEAN,
+            allowNull:true,
+            defaultValue: false,
         },
         isAdmin:{
             type: DataTypes.BOOLEAN,
             allowNull: true,
+            defaultValue: false,
         },
         superAdmin:{
             type: DataTypes.BOOLEAN,
             allowNull: true,
+            defaultValue: false,
         },
-        isRegistered:{
-            type: DataTypes.BOOLEAN,
-            allowNull:true,
-        }
 })
 }
