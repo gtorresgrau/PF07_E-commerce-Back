@@ -32,7 +32,7 @@ router.use('/sneaker', sneaker);
 router.use('/rawusers', rawusers); 
 router.use("/filter", filter);
 router.use("/user", user);
-router.use('https://pf-07-e-commerce-front.vercel.app/payment', payment);
+router.use('/payment', payment);
 
 
 module.exports = router;
