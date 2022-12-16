@@ -9,7 +9,7 @@ const rawusers = require('./rawUsers');
 const filter = require('./filterAnidado');
 const user= require("./getUserID");
 const payment = require('./postPaymentMP');
-
+const userLoggued= require("./userLoggued");
 const sneakerName= require("./sneakerName");
 const postUser= require("./postUsers");
 
@@ -19,6 +19,7 @@ const postUser= require("./postUsers");
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
+router.use("/userloggued", userLoggued);
 
 router.use('/sneakers', sneakers);
 
