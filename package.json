@@ -17,6 +17,7 @@
     "axios": "^0.27.2",
     "binary-extensions": "^2.2.0",
     "body-parser": "^1.19.0",
+    "cloudinary": "^1.33.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^8.6.0",
