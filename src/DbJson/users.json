@@ -11,8 +11,8 @@
     "phoneNumber": 0,
     "history":"",
     "status":"active",
-    "guest":true,
-    "loggued": false,
+    "guest":false,
+    "loggued": true,
     "isAdmin":false,
     "superAdmin":false
 },
@@ -28,8 +28,8 @@
     "phoneNumber": 0,
     "history":"",
     "status":"active",
-    "guest":true,
-    "loggued": false,
+    "guest":false,
+    "loggued": true,
     "isAdmin":false,
     "superAdmin":false
 },
@@ -45,8 +45,8 @@
     "phoneNumber": 0,
     "history":"",
     "status":"active",
-    "guest":true,
-    "loggued": false,
+    "guest":false,
+    "loggued": true,
     "isAdmin":false,
     "superAdmin":false
 },
@@ -62,8 +62,8 @@
     "phoneNumber": 0,
     "history":"",
     "status":"active",
-    "guest":true,
-    "loggued": false,
+    "guest":false,
+    "loggued": true,
     "isAdmin":false,
     "superAdmin":false
 },
@@ -79,8 +79,8 @@
     "phoneNumber": 0,
     "history":"",
     "status":"active",
-    "guest":true,
-    "loggued": false,
+    "guest":false,
+    "loggued": true,
     "isAdmin":false,
     "superAdmin":false
 },
@@ -96,8 +96,8 @@
     "phoneNumber": 0,
     "history":"",
     "status":"active",
-    "guest":true,
-    "loggued": false,
+    "guest":false,
+    "loggued": true,
     "isAdmin":false,
     "superAdmin":false
 },
@@ -113,8 +113,8 @@
     "phoneNumber": 0,
     "history":"",
     "status":"active",
-    "guest":true,
-    "loggued": false,
+    "guest":false,
+    "loggued": true,
     "isAdmin":false,
     "superAdmin":false
 }

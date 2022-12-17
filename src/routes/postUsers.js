@@ -15,7 +15,7 @@ const router= Router();
             return res.status(400).json("The user must complete this fields");
         }
 
-            const newUser= await createUser(req.body);
+            const newUser= await createUser({username,fullName,emailAddress,password,guest:false, loggued:true});
             console.log(newUser);
             return res.status(201).json(newUser);
         
