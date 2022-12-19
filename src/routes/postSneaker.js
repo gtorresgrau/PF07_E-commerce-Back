@@ -8,10 +8,6 @@ router.post('/', async (req, res) => {
   if( !title || !size || !type ) return res.status(404).send('Missing required data');
   try {
     if(image){
-      const uploadRes = await cloudinary.uploader.upload(image,{
-        upload_preset:'HenrySneaker'
-      })
-      if(uploadRes){
         const sneakerCreated = await insertSneaker({
           title, 
           price, 
@@ -28,12 +24,9 @@ router.post('/', async (req, res) => {
         console.log(sneakerCreated)
         if(sneakerCreated) res.status(200).send('Sneaker added successfully');
       }
+    }catch(error){
+      console.log(error)
     }
-    
-  } catch (error) {
-    console.log(error);
-    res.status(500).send(error);
-  }
 });
 
 module.exports = router;
