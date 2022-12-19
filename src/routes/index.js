@@ -1,6 +1,8 @@
 const { Router } = require('express');
 const router = Router();
 
+
+const sneakerOwner= require("./sneakerOwner");
 const sneakers = require('./sneakers');
 const filterBrand = require('./filterBrand');
 const insert = require('./postSneaker');
@@ -27,6 +29,7 @@ router.use("/postuser", postUser);
 
 router.use("/sneakerName", sneakerName);
 
+router.use("/sneakerowner", sneakerOwner);
 router.use('/brand', filterBrand);
 router.use('/sneakers', insert);
 router.use('/sneaker', sneaker);
