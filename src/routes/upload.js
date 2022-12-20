@@ -4,21 +4,19 @@ const cloudinary = require('../utils/Cloudinary');
 
 
 router.post('/', async (req, res) => {
+    const {image} = req.body;
+    //console.log('imageUp:', image)
     try {
-        const image = req.body;   
-        //console.log('image:',image)
-        const uploadedResponse = await cloudinary.uploader.upload(image,
-            {
-            upload_preset:'HenrySneaker',
-            public_id: 'Sneaker',
-            allowed_formats:['png','jpg','jpeg','svg','ico','jfif','webp']
-            })
-        console.log('uploadedResponse:',uploadedResponse)
+    const uploadedResponse = await cloudinary.uploader.upload(image,
+         { 
+            upload_preset:'HenrySneakers'
+        });
+        console.log('uploadresp:',uploadedResponse);
+        res.status(200).json(uploadedResponse)
     } catch (error) {
-        console.error(error)
+        console.error('ErrorUP',error)
         res.status(500).send('something went')
     }
-    res.status(200).send('Picture was uploaded')
 })
 
-module.exports = {router};
+module.exports = router;

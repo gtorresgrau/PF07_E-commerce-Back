@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
         const sneakerCreated = await insertSneaker({
           title, 
           price, 
-          image:uploadRes, 
+          image, 
           description, 
           size, 
           stock, 
