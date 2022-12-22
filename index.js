@@ -21,7 +21,8 @@ const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const { insertData, allU } = require('./src/controllers/insertDataDB.js')
 const {PORT}= process.env;
-require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config()
 
 // Syncing all the models at once.
 conn.sync({force: true}).then(() => {
