@@ -1,9 +1,14 @@
 const { Sneakers } = require("../db");
+const {Op} = require('sequelize');
 
 const colourFilter = async (filtro) => {     
   
-    const colourFil = await Sneakers.findAll({where: {colour:filtro}})
-       
+    const colourFil = await Sneakers.findAll({
+      where: {
+        colour:{ [Op.iLike]: `%${filtro}%` }
+    }
+  });
+
     const colourF = colourFil.map(filter => {
       return {
         id: filter.id,
@@ -22,5 +27,6 @@ const colourFilter = async (filtro) => {
         
     return colourF;
     };
-    module.exports = { colourFilter };
+    
+    module.exports =  {colourFilter};
     

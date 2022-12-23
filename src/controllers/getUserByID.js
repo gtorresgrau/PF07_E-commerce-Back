@@ -25,4 +25,5 @@ const UID = async (id) => {
 };
   return uID;
 };
+
 module.exports = { UID };
