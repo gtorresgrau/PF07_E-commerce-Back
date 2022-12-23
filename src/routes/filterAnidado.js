@@ -8,6 +8,7 @@ router.get('/', async ( req,res)=>{
     try{
         if(brand){
             const brandFil = await brandFilter(brand);
+
             if(colour){
                 const colourFil = brandFil.filter((e)=>{                
                     if(typeof colour === 'string') e.colour === colour;
@@ -94,10 +95,10 @@ router.get('/', async ( req,res)=>{
                     return res.status(200).send(typeFil)
                 }           
                 return res.status(200).send(colourFil);
-                }
+            }
                         
                   
-                if(type){
+            if(type){
                     const typeFil = await typeFilter(type);
                             
                     if(genre){
@@ -110,10 +111,10 @@ router.get('/', async ( req,res)=>{
                 return res.status(200).send(typeFil);
                 }
                    
-                if(genre){
+            if(genre){
                     const genreFil = await genreFilter(genre)
                     return res.status(200).send(genreFil)
-                };
+            };
   
     }catch(error){
         return res.status(404).send(error);
