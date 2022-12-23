@@ -55,16 +55,16 @@ const {Cart}= sequelize.models;
 // Product.hasMany(Reviews);
 
 //1-N
-User.hasMany(Sneakers, {as: "sneakerOwner", foreignKey: "ownerId"});
-Sneakers.belongsTo(User, {as: "sneakerOwner"});
+// User.hasMany(Sneakers, {as: "sneakerOwner"});
+// Sneakers.belongsTo(User, {as: "sneakerOwner"});
 
-//1-1
-User.hasOne(Cart, {as:"cartUser", foreignKey:"cartUserId"})
-Cart.belongsTo(User, {as:"cartUser"})
+// //1-1
+// User.hasOne(Cart, {as:"cartUser", foreignKey:"cartUserId"})
+// Cart.belongsTo(User, {as:"cartUser"})
 
-//N-N
-Sneakers.belongsToMany(Cart, {through: "cart_sneaker"})
-Cart.belongsToMany(Sneakers, {through: "cart_snekaer"})
+// //N-N
+// Sneakers.belongsToMany(Cart, {through: "cart_sneaker"})
+// Cart.belongsToMany(Sneakers, {through: "cart_snekaer"})
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
