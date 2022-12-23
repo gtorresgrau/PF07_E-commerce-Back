@@ -1,7 +1,7 @@
 const dataJSON = require('../DbJson/SneakerDb.json');
 const { Sneakers } = require("../db");
 const {User}= require("../db");
-const dataU = require("../DbJson/Users.json");
+const dataU = require("../DbJson/users.json");
 
 const insertData = async () => {
   dataJSON.forEach(s => {
