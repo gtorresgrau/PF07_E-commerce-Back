@@ -56,7 +56,7 @@ const {Cart}= sequelize.models;
 
 //1-N
 User.hasMany(Sneakers, {as: "sneakerOwner", foreignKey: "ownerId"});
-Sneakers.belongsTo(User, {as: "owner"});
+Sneakers.belongsTo(User, {as: "sneakerOwner"});
 
 //1-1
 User.hasOne(Cart, {as:"cartUser", foreignKey:"cartUserId"})
