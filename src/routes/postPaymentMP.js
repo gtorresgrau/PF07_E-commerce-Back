@@ -8,7 +8,8 @@ const PaymentInstance = new PaymentController(new PaymentService());
 
 
 router.get("/", function (req, res, next) {
-  
+  const {productMp} = req.body;
+  console.log('prodcuctMp:',productMp)
   console.log('postPaymentMP: estoy aca')
   PaymentInstance.getPaymentLink(req, res);
 });

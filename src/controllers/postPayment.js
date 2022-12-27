@@ -4,18 +4,15 @@ class PaymentController {
     }
   
     async getPaymentLink(req, res) {
-      console.log('getPayment: estoy aca')
       try {
         const payment = await this.subscriptionService.createPayment();
   
-        return res.json(payment);
+        return res.send(payment);
         
       } catch (error) {
         console.log(error);
   
-        return res
-          .status(500)
-          .json({ error: true, msg: "Failed to create payment" });
+        return res.status(500).send({ error: true, msg: "Failed to create payment" });
       }
     }
   
