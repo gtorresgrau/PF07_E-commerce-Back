@@ -17,10 +17,10 @@ router.get('/', async ( req,res)=>{
             const brandFil = await brandFilter(brand);
 
             if(colour){
-                const colourFil=brandFil.filter(e=> (e.colour===colour || e.colour===colour[0]||e.colour===colour[1]||e.colour===colour[2]||e.colour===colour[3]||e.colour===colour[4]||e.colour===colour[5]))
+                const colourFil=brandFil.filter(e=> (e.colour===colour || e.colour===colour[0]||e.colour===colour[1]||e.colour===colour[2]||e.colour===colour[3]||e.colour===colour[4]||e.colour===colour[5]||e.colour===colour[6]||e.colour===colour[7]||e.colour===colour[8]||e.colour===colour[9]||e.colour===colour[11]))
                 
                 if(type){
-                    const typeFil=colourFil.filter(e=>(e.type===type||e.type===type[0]||e.type===type[1]||e.type===type[2]||e.type===type[3]||e.type===type[4]));
+                    const typeFil=colourFil.filter(e=>(e.type===type||e.type===type[0]||e.type===type[1]||e.type===type[2]||e.type===type[3]||e.type===type[4]||e.type===type[5]));
                     
                     if(genre){
                         const genreFil=typeFil.filter(e=>(e.genre===genre||e.genre===genre[0]||e.genre===genre[1]||e.genre===genre[2]))
@@ -35,11 +35,8 @@ router.get('/', async ( req,res)=>{
 
                 return res.status(200).json(colourFil);}
 
-            
-            
-            
             if(type){
-                const typeFil=brandFil.filter(e=>(e.type===type||e.type===type[0]||e.type===type[1]||e.type===type[2]||e.type===type[3]||e.type===type[4]));
+                const typeFil=brandFil.filter(e=>(e.type===type||e.type===type[0]||e.type===type[1]||e.type===type[2]||e.type===type[3]||e.type===type[4]||e.type===type[5]));
                 
                 if(genre){
                     const genreFil=typeFil.filter(e=>(e.genre===genre||e.genre===genre[0]||e.genre===genre[1]||e.genre===genre[2]))
