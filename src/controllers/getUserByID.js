@@ -17,7 +17,6 @@ const UID = async (id) => {
     city: userId.city,
     phoneNumber: userId.phoneNumber,
     history: userId.history,
-    status: userId.status,
     guest: userId.guest,
     loggued: userId.loggued,
     isAdmin: userId.isAdmin,
