@@ -25,9 +25,9 @@ const dotenv = require('dotenv');
 dotenv.config()
 
 // Syncing all the models at once.
-conn.sync({force: false}).then(() => {
-  insertData();
-  allU();
+conn.sync({force: false}).then(async() => {
+  await insertData();
+  //await allU();
   server.listen(PORT, () => {
     console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
   });

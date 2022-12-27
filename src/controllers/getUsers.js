@@ -16,7 +16,6 @@ const allUsers= async()=>{
             city: e.city,
             phoneNumber: e.phoneNumber,
             history: e.history,
-            status: e.status,
             guest: e.guest,
             loggued: e.loggued,
             isAdmin: e.isAdmin,

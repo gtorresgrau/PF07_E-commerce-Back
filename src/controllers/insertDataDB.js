@@ -39,7 +39,6 @@ const allU = async()=>{
         city: u.city,
         phoneNumber: u.phoneNumber,
         history: u.history,
-        status: u.status,
         guest: u.guest,
         loggued: u.loggued,
         isAdmin: u.isAdmin,

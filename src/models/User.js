@@ -48,11 +48,6 @@ module.exports = (sequelize) =>{
             type: DataTypes.STRING,
             allowNull:true,
         },
-        status:{
-            type: DataTypes.STRING,
-            allowNull: true,
-            defaultValue: "active",
-        },
         guest:{
             type: DataTypes.BOOLEAN,
             allowNull:true,
