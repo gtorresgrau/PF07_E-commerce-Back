@@ -4,8 +4,8 @@ const {Op} = require('sequelize');
 const brandFilter = async (filtro) => {     
     const brandFil = await Sneakers.findAll({
         where: {
-            brand:{ [Op.iLike]: `%${filtro}%` }
-        }
+            brand:filtro}
+        
     })
     return brandFil;
 };
@@ -13,7 +13,7 @@ const brandFilter = async (filtro) => {
 const genreFilter = async (filtro) => {     
     const genreFil = await Sneakers.findAll({
         where: {
-            genre:{ [Op.iLike]: `%${filtro}%` }
+            genre:filtro
         }
     })
     return genreFil;
@@ -22,7 +22,7 @@ const genreFilter = async (filtro) => {
 const colourFilter = async (filtro) => {     
     const colourFil = await Sneakers.findAll({
         where: {
-            colour:{ [Op.iLike]: `%${filtro}%` }
+            colour:filtro
         }
     })
     return colourFil;
@@ -31,9 +31,9 @@ const colourFilter = async (filtro) => {
 const typeFilter = async (filtro) => {     
     const typeFil = await Sneakers.findAll({
         where: {
-            type:{ [Op.iLike]: `%${filtro}%` }
+            type:filtro
         }
-    })
+    })  
     return typeFil;
 };
 
