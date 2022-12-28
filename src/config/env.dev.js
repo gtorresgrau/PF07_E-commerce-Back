@@ -31,12 +31,8 @@ if (!clientOriginUrl) {
     );
 }
 
-<<<<<<< HEAD
-const clientOrigins = ['http://localhost:4040','http://localhost:3000',' https://pf-07-e-commerce-front.vercel.app/sneakers'];
-=======
 const clientOrigins = ['http://localhost:4040', 'http://localhost:3000','https//pf-07-e-commerce-front.vercel.app/sneakers'];
 
->>>>>>> 795039acd2f24749709f8f0c1dd221a91afa9099
 
 module.exports = {
     audience,
