@@ -13,6 +13,7 @@ const userLoggued= require("./userLoggued");
 const sneakerName= require("./sneakerName");
 const postUser= require("./postUsers");
 const upload =require('./upload');
+const pagoo =require('./linkPagoMP');
 
 // const axios = require("axios");
 //const SneaksAPI = require('sneaks-api');
@@ -36,6 +37,7 @@ router.use("/filter", filter);
 router.use("/user", user);
 router.use('/payment', payment);
 router.use('/upload', upload);
+router.use('/pagoo', pagoo);
 
 
 module.exports = router;
