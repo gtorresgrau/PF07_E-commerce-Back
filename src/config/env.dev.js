@@ -31,6 +31,7 @@ if (!clientOriginUrl) {
     );
 }
 
+
 const clientOrigins = ['http://localhost:4040', 'http://localhost:3000','https//pf-07-e-commerce-front.vercel.app/sneakers'];
 
 
