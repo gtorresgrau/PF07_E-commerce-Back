@@ -23,7 +23,8 @@ router.post('/',(req,res)=>{
         success: "https://pf-07-e-commerce-front.vercel.app/sneakers"
       },
       
-      binary_mode:true 
+      binary_mod
+      e:true 
    }
    mercadopago.preferences.create(preference)
    .then((response)=>res.status(200).send({response}))
