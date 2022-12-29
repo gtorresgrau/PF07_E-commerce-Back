@@ -4,7 +4,7 @@ const { insertSneaker } = require('../controllers/postSneaker');
 const cloudinary = require('../utils/Cloudinary');
 
 router.post('/', async (req, res) => {
-  const { title, price, image, description, size, stock, brand, model, genre, colour, type } = req.body;
+  const { title, price, image, description, size, stock, brand, model, genre, colour, type, rating } = req.body;
   if( !title || !size || !type ) return res.status(404).send('Missing required data');
   try {
     if(image){
@@ -19,7 +19,8 @@ router.post('/', async (req, res) => {
           model, 
           genre, 
           colour, 
-          type
+          type,
+          rating
          });
         console.log(sneakerCreated)
         if(sneakerCreated) res.status(200).send('Sneaker added successfully');

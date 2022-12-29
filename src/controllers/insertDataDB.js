@@ -17,7 +17,8 @@ const insertData = async () => {
         brand: s.brand, 
         genre: s.genre, 
         colour: s.colour,
-        type: s.type
+        type: s.type,
+        rating: s.rating
       }
     })
   }) 
