@@ -14,7 +14,8 @@ const allSneakersDB = async () => {
       brand: el.brand, 
       genre: el.genre, 
       colour: el.colour,
-      type: el.type
+      type: el.type,
+      rating:el.rating
     }
   });
   return allSneakers;

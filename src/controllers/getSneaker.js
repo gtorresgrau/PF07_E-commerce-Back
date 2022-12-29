@@ -17,7 +17,8 @@ const sneakerId = async (id) => {
     model:sneakerId.model,
     genre:sneakerId.genre,
     colour:sneakerId.colour,
-    type:sneakerId.type
+    type:sneakerId.type,
+    rating:sneakerId.rating
 };
 
   return sneakerID;

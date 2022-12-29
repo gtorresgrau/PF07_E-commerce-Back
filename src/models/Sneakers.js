@@ -32,7 +32,7 @@ module.exports = (sequelize) =>{
         },
 
         genre:{
-            type: DataTypes.ENUM("Kids","Women","Men","All"),
+            type: DataTypes.ENUM("Kids","Women","Men"),
             allowNull: false,
         },
         colour:{
@@ -40,8 +40,12 @@ module.exports = (sequelize) =>{
             allowNull: false,
         },
         type:{
-            type: DataTypes.ENUM("Sports", "Running", "Training", "All"),
+            type: DataTypes.ENUM("Sports", "Running", "Training"),
             defaultValue: "Sports"
+        },
+        rating:{
+            type: DataTypes.FLOAT,
+            defaultValue: null
         }
     })
 }

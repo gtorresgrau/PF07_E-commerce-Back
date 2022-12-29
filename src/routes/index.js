@@ -2,7 +2,6 @@ const { Router } = require('express');
 const router = Router();
 
 const sneakers = require('./sneakers');
-const filterBrand = require('./filterBrand');
 const insert = require('./postSneaker');
 const sneaker = require('./getSneaker');
 const rawusers = require('./rawUsers');
@@ -22,20 +21,14 @@ const pagoo =require('./linkPagoMP');
 // Ejemplo: const authRouter = require('./auth.js');
 
 router.use("/userloggued", userLoggued);
-
 router.use('/sneakers', sneakers);
-
 router.use("/postuser", postUser);
-
 router.use("/sneakerName", sneakerName);
-
-router.use('/brand', filterBrand);
 router.use('/sneakers', insert);
 router.use('/sneaker', sneaker);
 router.use('/rawusers', rawusers); 
 router.use("/filter", filter);
 router.use("/user", user);
-
 router.use('/upload', upload);
 router.use('/payment', pagoo);
 
