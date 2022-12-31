@@ -51,6 +51,9 @@ sequelize.models = Object.fromEntries(capsEntries);
 const {Sneakers}= sequelize.models;
 const {User}= sequelize.models;
 //const {Cart}= sequelize.models;
+const {Review} = sequelize.models;
+
+
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
 
