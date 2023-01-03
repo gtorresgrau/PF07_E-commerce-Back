@@ -60,6 +60,8 @@ const {Review} = sequelize.models;
 //1-N
 // User.hasMany(Sneakers, {as: "sneakerOwner"});
 // Sneakers.belongsTo(User, {as: "sneakerOwner"});
+Review.belongsTo(Sneakers,{as: "sneakerReview"});
+Sneakers.hasMany(Review,{as:"sneakerReview"});
 
 // //1-1
 // User.hasOne(Cart, {as:"cartUser", foreignKey:"cartUserId"})
