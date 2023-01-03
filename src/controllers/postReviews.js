@@ -1,8 +1,9 @@
 const {Review} = require("../db");
 
 const postReviews = async ({stars, text, sneakerId, userId}) => {
-    const [reviewCreated, status] = await Review.create({
-      where: {sneakerId: sneakerId},
+  console.log('postReviewB:',stars,text, sneakerId, userId);
+    const [status] = await Review.findOrCreate({
+      where: {sneakerId: sneakerId, userId: userId},
       defaults: {
         sneakerId,
         userId,
