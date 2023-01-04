@@ -24,32 +24,32 @@ const insertData = async () => {
   }) 
 }
 
-const allU = async()=>{
-  dataU.forEach(u=>{
-    User.findOrCreate({
-      where: {
-        username: u.username,
-        fullName: u.fullName,
-      },
-      defaults:{
-        password: u.password,
-        image: u.image,
-        emailAddress: u.emailAddress,
-        homeAddress: u.homeAddress,
-        region: u.region,
-        city: u.city,
-        phoneNumber: u.phoneNumber,
-        history: u.history,
-        guest: u.guest,
-        loggued: u.loggued,
-        isAdmin: u.isAdmin,
-        superAdmin: u.superAdmin,
-      }
-    })
-  })
-}
+// const allU = async()=>{
+//   dataU.forEach(u=>{
+//     User.findOrCreate({
+//       where: {
+//         username: u.username,
+//         fullName: u.fullName,
+//       },
+//       defaults:{
+//         password: u.password,
+//         image: u.image,
+//         emailAddress: u.emailAddress,
+//         homeAddress: u.homeAddress,
+//         region: u.region,
+//         city: u.city,
+//         phoneNumber: u.phoneNumber,
+//         history: u.history,
+//         guest: u.guest,
+//         loggued: u.loggued,
+//         isAdmin: u.isAdmin,
+//         superAdmin: u.superAdmin,
+//       }
+//     })
+//   })
+// }
 
 module.exports = {
   insertData,
-  allU
+  // allU
 }
