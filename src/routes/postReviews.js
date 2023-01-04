@@ -3,7 +3,7 @@ const router = express.Router();
 const { postReviews } = require('../controllers/postReviews.js');
 
 router.post('/', async (req, res) => {
-  console.log('reviewsB:',req.body);
+  console.log('BA_post_reviewsBody:',req.body);
   const { stars, text, sneakerId, userId} = req.body;
   if( !stars || !sneakerId || !userId ) return res.status(404).send('Missing required data');
   try {
