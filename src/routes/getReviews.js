@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const router = Router();
-const {reviewId} = require('../controllers/getSneaker')
+const {reviewId} = require('../controllers/getReviews')
 
 router.get('/:id', async ( req,res)=>{
     const {id} = req.params;
@@ -8,7 +8,7 @@ router.get('/:id', async ( req,res)=>{
         const search = await reviewId(id);
         res.status(200).send(search);
     }catch (error) { 
-            res.status(404).send("There are no reviews for this sneakers")
+            res.status(404).send(`Something happend filtering by ID: ${id}`)
         }
 });
 
