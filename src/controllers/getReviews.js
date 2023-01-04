@@ -1,14 +1,17 @@
 const { Review } = require("../db");
 
-const sneakerReviews = async (id) => {
-  const allReviews= await Review.findall({where: {sneakerId: sneakerId}});
+const reviewId = async (id) => {
+  console.log('BaReviewID_id:',id)
+  const reviewId = await Review.findAll({where: {sneakerId: id}});
+  console.log('BaReviewId:',reviewId)
 
   const sneakerID = {
-    stars:sneakerId.stars,
-    text:sneakerId.text,
-    sneakerId:sneakerId.sneakerId,
-    userId:sneakerId.userId
+    stars:reviewId.stars,
+    text:reviewId.text,
+    sneakerId:reviewId.id,
+    userId:reviewId.userId
 };
-  return allReviews;
+  console.log('BaSneakerID:',sneakerID);
+  return sneakerID;
 };
-module.exports = { allReviews };
+module.exports = { reviewId };
