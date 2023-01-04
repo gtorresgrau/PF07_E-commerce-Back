@@ -4,6 +4,7 @@ const {reviewId} = require('../controllers/getReviews')
 
 router.get('/:id', async ( req,res)=>{
     const {id} = req.params;
+    console.log('BAgetID:',id)
     try {
         const search = await reviewId(id);
         res.status(200).send(search);

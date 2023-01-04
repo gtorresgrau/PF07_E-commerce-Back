@@ -7,8 +7,8 @@ const sneaker = require('./getSneaker');
 const rawusers = require('./rawUsers');
 const filter = require('./filterAnidado');
 const getUser = require("./getUserID");
-const reviews = require('./reviews');
-const reviewsId = require('./getReviews');
+const postReviews = require('./postReviews');
+const getReviews = require('./getReviews');
 
 const userLoggued= require("./userLoggued");
 const sneakerName= require("./sneakerName");
@@ -33,8 +33,8 @@ router.use('/sneaker', sneaker);
 router.use("/filter", filter);
 router.use('/upload', upload);
 router.use('/payment', pagoo);
-router.use('/reviews', reviews);
-router.use('/reviews', reviewsId);
+router.use('/reviews', postReviews);
+router.use('/reviews', getReviews);
 
 
 module.exports = router;

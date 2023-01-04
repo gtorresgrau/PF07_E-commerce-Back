@@ -2,20 +2,9 @@ const { Review } = require("../db");
 
 const reviewId = async (id) => {
   console.log('Ba_ID_id:',id)
-  const reviewId = await Review.findAll({where: {sneakerId: id}});
-  console.log('BaReviewId:',reviewId)
-    if(reviewId.length){
-      const sneakerID = {
-        stars:reviewId.stars,
-        text:reviewId.text,
-        sneakerId:reviewId.id,
-        userId:reviewId.userId
-      };
-    }else{
-      reviewId = 'There are no reviews for this sneakers';
-    }
-    console.log('BaSneakerID:',sneakerID);
-    return sneakerID;
-    
+  const reviewById = await Review.findAll({where: {sneakerId: id}});
+  if(!reviewById.length) return 'There are no reviews for this sneakers, be the first one';
+  return reviewById;
 };
+
 module.exports = { reviewId };
