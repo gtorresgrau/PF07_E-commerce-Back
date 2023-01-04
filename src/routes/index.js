@@ -6,7 +6,8 @@ const insert = require('./postSneaker');
 const sneaker = require('./getSneaker');
 const rawusers = require('./rawUsers');
 const filter = require('./filterAnidado');
-const user= require("./getUserID");
+const user = require("./getUserID");
+const reviews = require('./reviews');
 
 const userLoggued= require("./userLoggued");
 const sneakerName= require("./sneakerName");
@@ -31,6 +32,7 @@ router.use("/filter", filter);
 router.use("/user", user);
 router.use('/upload', upload);
 router.use('/payment', pagoo);
+router.use('/reviews', reviews);
 
 
 module.exports = router;

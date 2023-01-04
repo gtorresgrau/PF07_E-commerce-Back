@@ -51,12 +51,17 @@ sequelize.models = Object.fromEntries(capsEntries);
 const {Sneakers}= sequelize.models;
 const {User}= sequelize.models;
 //const {Cart}= sequelize.models;
+const {Review} = sequelize.models;
+
+
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
 
 //1-N
 // User.hasMany(Sneakers, {as: "sneakerOwner"});
 // Sneakers.belongsTo(User, {as: "sneakerOwner"});
+Review.belongsTo(Sneakers,{as: "sneakerReview"});
+Sneakers.hasMany(Review,{as:"sneakerReview"});
 
 // //1-1
 // User.hasOne(Cart, {as:"cartUser", foreignKey:"cartUserId"})
