@@ -19,7 +19,7 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-const { insertData, allU } = require('./src/controllers/insertDataDB.js')
+const { insertData } = require('./src/controllers/insertDataDB.js')
 const {PORT}= process.env;
 const dotenv = require('dotenv');
 dotenv.config()

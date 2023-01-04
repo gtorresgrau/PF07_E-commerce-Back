@@ -1,25 +1,18 @@
-const {User}= require("../db");
+const { User }= require("../db");
 
-const createUser= async({username, fullName, password, image, emailAddress,homeAddress,region,city,phoneNumber,history,guest,loggued,isAdmin,superAdmin})=>{
+const createUser = async({fullName, image, email})=>{
 
-    const [userCreated, state]= await User.findOrCreate({
-    where:{username: username, fullName: fullName},
+    const [userCreated, status]= await User.findOrCreate({
+    where:{email: email},
     defaults:{
-        password,
-         image,
-          emailAddress,
-          homeAddress,
-          region,
-          city,
-          phoneNumber,
-          history,
-          guest,
-          loggued,
-          isAdmin,
-          superAdmin,
+        fullName,
+        image,
+        email
     }
 })
-return state;
+return status;
 }
 
-module.exports= {createUser};
+module.exports = {
+    createUser
+};

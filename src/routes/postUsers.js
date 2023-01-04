@@ -1,27 +1,25 @@
-const Router= require("express");
+const { Router } = require("express");
+const router = Router();
+const { auth } = require("express-openid-connect");
+const { createUser }= require("../controllers/postUser");
 
-const {auth}= require("express-openid-connect");
-
-const {createUser}= require("../controllers/postUser");
-
-const router= Router();
-
-
-  router.post("/", async (req,res)=>{
-      try{
-        const {username, fullName, password,image,emailAddress,homeAddress,region,city,phoneNumber,history,status,guest,loggued,isAdmin,superAdmin}= req.body;
+router.post("/", async (req,res)=>{
+  const {fullName, image, email}= req.body;
+  if(!fullName || !email || !image) return res.status(400).json("The user must complete this fields");
   
-        if(!username || !fullName || !emailAddress || !password){
-            return res.status(400).json("The user must complete this fields");
-        }
-
-            const newUser= await createUser({username,fullName,emailAddress,password,guest:false, loggued:true});
-            console.log(newUser);
-            return res.status(201).json(newUser);
+  try{
+    const newUser = await createUser({
+      fullName,
+      email,
+      image
+    });
+    console.log(newUser);
+    if(newUser) res.status(201).send('User added successfuly');
         
     }catch(error){
-        return res.status(400).json(error);
+        // return res.status(400).json(error);
+        console.log("post", error);
     }
-  })
+})
 
-module.exports= router;
+module.exports = router;
