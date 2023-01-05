@@ -15,6 +15,7 @@ const sneakerName= require("./sneakerName");
 const postUser= require("./postUsers");
 const upload =require('./upload');
 const pagoo =require('./linkPagoMP');
+const notificar = require('./notificar');
 
 // const axios = require("axios");
 //const SneaksAPI = require('sneaks-api');
@@ -29,12 +30,13 @@ router.use("/user", getUser);
 router.use("/sneakerName", sneakerName);
 router.use('/sneakers', insert);
 router.use('/sneaker', sneaker);
- router.use('/rawusers', rawusers); 
+router.use('/rawusers', rawusers); 
 router.use("/filter", filter);
 router.use('/upload', upload);
 router.use('/payment', pagoo);
 router.use("/userbanned", userBanned);
 router.use('/reviews', postReviews);
 router.use('/reviews', getReviews);
+router.use('https://pf-07-e-commerce-front.vercel.app/notificar',notificar);
 
 module.exports = router;
