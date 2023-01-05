@@ -9,7 +9,7 @@ const filter = require('./filterAnidado');
 const getUser = require("./getUserID");
 const postReviews = require('./postReviews');
 const getReviews = require('./getReviews');
-
+const userBanned= require("./userBanned");
 const userLoggued= require("./userLoggued");
 const sneakerName= require("./sneakerName");
 const postUser= require("./postUsers");
@@ -29,12 +29,12 @@ router.use("/user", getUser);
 router.use("/sneakerName", sneakerName);
 router.use('/sneakers', insert);
 router.use('/sneaker', sneaker);
-// router.use('/rawusers', rawusers); 
+ router.use('/rawusers', rawusers); 
 router.use("/filter", filter);
 router.use('/upload', upload);
 router.use('/payment', pagoo);
+router.use("/userbanned", userBanned);
 router.use('/reviews', postReviews);
 router.use('/reviews', getReviews);
-
 
 module.exports = router;
