@@ -5,7 +5,7 @@ const router = Router();
 mercadopago.configure({access_token:process.env.ACCESS_TOKEN})
 router.post('/',(req,res)=>{
    const prod= req.body
-   console.log('producto clg:',prod)
+  
     let preference={
     payer: {
         name: "Juan",
@@ -36,13 +36,13 @@ router.post('/',(req,res)=>{
         failure: "http://localhost:3000/sneakers",
         success: "http://localhost:3000/sneakers"
     },
-    notification_url: "https://pf-07-e-commerce-front.vercel.app/notificar",
+    notification_url: "https://8f3b-2803-9800-9993-7c0a-756c-9b90-8872-5c9a.sa.ngrok.io/notificar",
     binary_mode:true 
    }
 
    mercadopago.preferences.create(preference)
    .then((response)=>{
-    console.log(response.body.init_point);
+    console.log('respuesta cuando hace el post del link de pago',response);
     res.status(200).send({response});
     })
     .catch(function(e){

@@ -37,6 +37,6 @@ router.use('/payment', pagoo);
 router.use("/userbanned", userBanned);
 router.use('/reviews', postReviews);
 router.use('/reviews', getReviews);
-router.use('https://pf-07-e-commerce-front.vercel.app/notificar',notificar);
+router.use('/notificar',notificar);
 
 module.exports = router;
