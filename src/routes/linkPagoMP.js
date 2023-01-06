@@ -4,28 +4,16 @@ const router = Router();
 
 mercadopago.configure({access_token:process.env.ACCESS_TOKEN})
 router.post('/',(req,res)=>{
-   const prod= req.body
-  
+   const prod = req.body
+  console.log('usuario', prod[0] )
+  console.log('producto', prod[1] )
     let preference={
     payer: {
-        name: "Juan",
-        surname: "Lopez",
-        email: "user@email.com",
-        phone: {
-            area_code: "11",
-            number: 4444-4444
-        },
-        identification: {
-            type: "DNI",
-            number: "12345678"
-        },
-        address: {
-            street_name: "Street",
-            street_number: 123,
-            zip_code: "5700"
-        }
+        name: prod[0].given_name,
+        surname: prod[0].family_name,
+        email: prod[0].email
     },
-    items:prod.map(e=> ({ 
+    items:prod[1].map(e=> ({ 
         title: e.title,
         picture_url: e.image,
         quantity: e.quantity,
@@ -42,7 +30,7 @@ router.post('/',(req,res)=>{
 
    mercadopago.preferences.create(preference)
    .then((response)=>{
-    console.log('respuesta cuando hace el post del link de pago',response);
+    /* console.log('respuesta cuando hace el post del link de pago',response); */
     res.status(200).send({response});
     })
     .catch(function(e){
