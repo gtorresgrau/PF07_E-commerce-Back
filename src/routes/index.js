@@ -14,6 +14,9 @@ const sneakerName= require("./sneakerName");
 const postUser= require("./postUsers");
 const upload =require('./upload');
 const pagoo =require('./linkPagoMP');
+const sneakerUpdate= require("./sneakerUpdate");
+const userToAdmin= require("./userToAdmin");
+
 
 // const axios = require("axios");
 //const SneaksAPI = require('sneaks-api');
@@ -28,11 +31,13 @@ router.use("/user", getUser);
 router.use("/sneakerName", sneakerName);
 router.use('/sneakers', insert);
 router.use('/sneaker', sneaker);
- router.use('/rawusers', rawusers); 
+router.use('/rawusers', rawusers); 
 router.use("/filter", filter);
 router.use('/upload', upload);
 router.use('/payment', pagoo);
 router.use('/reviews', reviews);
 router.use("/userbanned", userBanned);
+router.use("/useradmin",userToAdmin);
+router.use("/sneakerupdate", sneakerUpdate);
 
 module.exports = router;
