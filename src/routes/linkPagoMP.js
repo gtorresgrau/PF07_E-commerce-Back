@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const mercadopago = require('mercadopago');
 const router = Router();
+
 const { sendEmail } = require('../controllers/sendEmail');
 
 mercadopago.configure({ access_token: process.env.ACCESS_TOKEN })
@@ -18,6 +19,7 @@ router.post('/', (req, res) => {
             name: user.name,
             surname: user.family_name,
             email: user.email,
+
             phone: {
                 area_code: "11",
                 number: 4444 - 4444
@@ -32,7 +34,9 @@ router.post('/', (req, res) => {
                 zip_code: "5700"
             }
         },
+
         items: data.map(e => ({
+
             title: e.title,
             picture_url: e.image,
             quantity: e.quantity,
@@ -58,7 +62,9 @@ router.post('/', (req, res) => {
 
     setTimeout(() => {
         console.log("Envio de Email");
+
         sendEmail(user.email)
+
     }, "6000")
 });
 

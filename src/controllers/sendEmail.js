@@ -12,7 +12,7 @@ const sendEmail = async (email) => {
 
   const mensaje = {
     from: 'arieltrangoni1@gmail.com',
-    to: email,
+    to: 'arieltrangoni1@gmail.com',
     subject: 'Correo de pruebas',
     text: 'Se realizo la compra exitosamente en Henry Sneakers'
   }
