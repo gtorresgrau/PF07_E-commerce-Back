@@ -5,8 +5,8 @@ const router = Router();
 mercadopago.configure({access_token:process.env.ACCESS_TOKEN})
 router.post('/',(req,res)=>{
    const prod = req.body
-  console.log('usuario', prod[0] )
-  console.log('producto', prod[1] )
+ /*  console.log('usuario', prod[0] )
+  console.log('producto', prod[1] ) */
     let preference={
     payer: {
         name: prod[0].given_name,
@@ -24,7 +24,7 @@ router.post('/',(req,res)=>{
         failure: "http://localhost:3000/sneakers",
         success: "http://localhost:3000/sneakers"
     },
-    notification_url: "https://8f3b-2803-9800-9993-7c0a-756c-9b90-8872-5c9a.sa.ngrok.io/notificar",
+    notification_url: `https://1dd6-2803-9800-9993-7c0a-102d-3989-2956-1cc2.sa.ngrok.io/notificar`,
     binary_mode:true 
    }
 
