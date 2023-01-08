@@ -42,11 +42,7 @@ router.post('/',(req,res)=>{
 
    mercadopago.preferences.create(preference)
    .then((response)=>{
-<<<<<<< Updated upstream
-    console.log('respuesta cuando hace el post del link de pago',response);
-=======
      console.log('respuesta cuando hace el post del link de pago',response); 
->>>>>>> Stashed changes
     res.status(200).send({response});
     })
     .catch(function(e){
