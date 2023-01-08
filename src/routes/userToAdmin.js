@@ -4,17 +4,21 @@ const router= Router();
 
 const {User}= require("../db");
 
-router.put("/", async(req,res)=>{
+router.put("/users/:id/isAdmin", async(req,res)=>{
+    
+    const id = req.params.id;
+    const {fullName, isAdmin}= req.body;
+    
     try{
-        const {fullName, isAdmin}= req.body;
+        if (!id || !fullName || isAdmin === undefined) {
+            return res.status(400).json("You must complete this field before!");
+          }
 
-        if(!fullName || !isAdmin){
-            return res.status(400).json("You must complete this field before!")
-        }
+        
+        const userToAdmin= await User.update({ isAdmin }, { where: { id } })
+    .then(() =>  res.status(200).json(userToAdmin));
 
-        const userToAdmin= await User.findAll({where:{fullName: fullName, isAdmin: isAdmin}});
-
-        return res.status(200).json(userToAdmin);
+        
         
     }catch(error){
         return res.status(404).json({error:error.message});

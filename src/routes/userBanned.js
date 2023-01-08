@@ -1,20 +1,27 @@
 const {Router}= require("express");
+
 const router= Router();
+
 const {User}= require("../db");
 
-router.put("/", async(req,res)=>{
-    try{
+router.put("/users/:id/isBanned", async(req,res)=>{
+    
+    const id = req.params.id;
     const {fullName, isBanned}= req.body;
-    if(!fullName|| !isBanned){
-        return res.status(400).json("You must complete this field before!")
-    }
+    
+    try{
+        if (!id || !fullName || isBanned === undefined) {
+            return res.status(400).json("You must complete this field before!");
+          }
 
-        const userToBan= await User.findAll({where:{fullName: fullName, isBanned: isBanned}});
+        
+        const userToBan= await User.update({ isBanned }, { where: { id } })
+    .then(() =>  res.status(200).json(userToBan));
 
-
-        return res.status(200).json(userToBan);
+        
+        
     }catch(error){
-        return res.status(400).json({error: error.message});
+        return res.status(404).json({error:error.message});
     }
 })
 

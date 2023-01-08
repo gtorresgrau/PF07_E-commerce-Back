@@ -5,15 +5,20 @@ const router= Router();
 const {Sneakers}= require("../db");
 
 
-router.put("/", async(req,res)=>{
+router.put("/:id", async(req,res)=>{
     try{
         
+        const { id } = req.params;
+        const {title,price,image,description,size, stock, brand,genre, colour, type, rating}= req.body;
 
-        const {id,title,price,image,description,size, stock, brand,genre, colour, type, rating}= req.body;
-
-
+        if (!id || !title || !price || !image || !description || !size || !stock || !brand || !genre || !colour || !type) {
+            return res.status(400).json("You must complete this field before!");
+          }
+          
         
-        const sneakModified= await Sneakers.findAll( {where: {id:id, title:title, price:price, image:image, description:description, size:size, stock:stock, brand:brand, genre:genre, colour:colour, type:type, rating:rating}});
+        const sneakModified= await Sneakers.update(
+            { title, price, image, description, size, stock, brand, genre, colour, type },
+            { returning: true, where: { id } });
 
         return res.status(200).json(sneakModified);
     }catch(error){
