@@ -1,3 +1,4 @@
+const { timeStamp } = require('console');
 const {DataTypes} = require('sequelize');
 
 module.exports = (sequelize) =>{
@@ -15,7 +16,7 @@ module.exports = (sequelize) =>{
             allowNull:false
         },
         size:{
-            type: DataTypes.ARRAY(DataTypes.INTEGER),
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         image:{
@@ -42,10 +43,6 @@ module.exports = (sequelize) =>{
         type:{
             type: DataTypes.ENUM("Sports", "Running", "Training"),
             defaultValue: "Sports"
-        },
-        rating:{
-            type: DataTypes.FLOAT,
-            defaultValue: null
         }
-    })
+    },{timeStamp:false})
 }

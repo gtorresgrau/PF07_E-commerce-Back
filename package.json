@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "test": "mocha -w ./tests/**/*.spec.js"
   },
   "author": "Henry",
@@ -35,6 +35,7 @@
     "negotiator": "^0.6.3",
     "node": "^16.17.0",
     "node-fetch": "^3.2.10",
+    "nodemailer": "^6.8.0",
     "pg": "^8.8.0",
     "postgres": "^3.2.4",
     "react-dotenv": "^0.1.3",
