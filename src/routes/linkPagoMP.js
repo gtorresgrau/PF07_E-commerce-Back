@@ -1,19 +1,23 @@
 const { Router } = require('express');
 const mercadopago = require('mercadopago');
 const router = Router();
-const { sendEmail } = require('../controllers/sendEmail')
+const { sendEmail } = require('../controllers/sendEmail');
 
 mercadopago.configure({ access_token: process.env.ACCESS_TOKEN })
 router.post('/', (req, res) => {
-    const prod = req.body
-    /* const user = req.body
-    console.log("USERRRRRRRRRRRR", user) */
+    const data = req.body
+    /* const user = req.body*/
+    console.log("USERRRRRRRRRRRR", data)
+
+    const user = data.pop();
+    console.log('user:', user)
+
 
     let preference = {
         payer: {
-            name: "Juan",
-            surname: "Lopez",
-            email: "user@email.com",
+            name: user.name,
+            surname: user.family_name,
+            email: user.email,
             phone: {
                 area_code: "11",
                 number: 4444 - 4444
@@ -28,7 +32,7 @@ router.post('/', (req, res) => {
                 zip_code: "5700"
             }
         },
-        items: prod.map(e => ({
+        items: data.map(e => ({
             title: e.title,
             picture_url: e.image,
             quantity: e.quantity,
@@ -54,7 +58,7 @@ router.post('/', (req, res) => {
 
     setTimeout(() => {
         console.log("Envio de Email");
-        sendEmail()
+        sendEmail(user.email)
     }, "6000")
 });
 

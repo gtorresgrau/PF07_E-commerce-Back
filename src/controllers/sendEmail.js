@@ -12,7 +12,7 @@ const sendEmail = async (email) => {
 
   const mensaje = {
     from: 'arieltrangoni1@gmail.com',
-    to: 'arieltrangoni1@gmail.com',
+    to: email,
     subject: 'Correo de pruebas',
     text: 'Se realizo la compra exitosamente en Henry Sneakers'
   }
@@ -20,7 +20,7 @@ const sendEmail = async (email) => {
   const transport = nodemailer.createTransport(config);
 
   const info = await transport.sendMail(mensaje);
-  console.log(info)
+
 };
 
 module.exports = {
