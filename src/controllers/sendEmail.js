@@ -20,7 +20,7 @@ const sendEmail = async (email) => {
   const transport = nodemailer.createTransport(config);
 
   const info = await transport.sendMail(mensaje);
-  console.log(info)
+
 };
 
 module.exports = {
