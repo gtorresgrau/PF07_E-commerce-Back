@@ -14,7 +14,7 @@ const sendEmail = async (email) => {
     from: 'arieltrangoni1@gmail.com',
     to: email,
     subject: 'Correo de pruebas',
-    text: 'Se realizo la compra exitosamente'
+    text: 'Se realizo la compra exitosamente en Henry Sneakers'
   }
 
   const transport = nodemailer.createTransport(config);
