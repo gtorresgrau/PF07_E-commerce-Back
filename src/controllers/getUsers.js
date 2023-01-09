@@ -1,9 +1,9 @@
-const { User }= require("../db");
+const { User } = require("../db");
 
 const allUsers = async () => {
     const usersDB = await User.findAll();
-    const users = usersDB.map(e =>{
-        return{
+    const users = usersDB.map(e => {
+        return {
             id: e.id,
             userName: e.userName || '',
             fullName: e.fullName || '',
@@ -15,6 +15,7 @@ const allUsers = async () => {
             phoneNumber: e.phoneNumber,
             orders: e.orders || [],
             isAdmin: e.isAdmin,
+            isBanned: e.isBanned,
             superAdmin: e.superAdmin,
         }
     })
@@ -25,7 +26,7 @@ const userById = async (id) => {
     return await User.findByPk(id);
 }
 
-module.exports={
+module.exports = {
     allUsers,
     userById
 }

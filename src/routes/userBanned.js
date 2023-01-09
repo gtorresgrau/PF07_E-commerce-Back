@@ -1,21 +1,26 @@
-const {Router}= require("express");
-const router= Router();
-const {User}= require("../db");
+const { Router } = require("express");
 
-router.put("/", async(req,res)=>{
-    try{
-    const {fullName, isBanned}= req.body;
-    if(!fullName|| !isBanned){
-        return res.status(400).json("You must complete this field before!")
+const router = Router();
+
+const { User } = require("../db");
+
+router.put("/:id", async (req, res) => {
+
+  const id = req.params.id;
+  const { isBanned } = req.body
+
+  try {
+    if (isBanned === true) {
+      const deleteBand = await User.update({ isBanned: false }, { where: { id: id } })
+      res.status(200).json(deleteBand);
+    } else {
+      const isBannedd = await User.update({ isBanned: true }, { where: { id: id } })
+      res.status(200).json(isBannedd);
     }
 
-        const userToBan= await User.findAll({where:{fullName: fullName, isBanned: isBanned}});
-
-
-        return res.status(200).json(userToBan);
-    }catch(error){
-        return res.status(400).json({error: error.message});
-    }
+  } catch (error) {
+    return res.status(404).json({ error: error.message });
+  }
 })
 
-module.exports= router;
+module.exports = router;
