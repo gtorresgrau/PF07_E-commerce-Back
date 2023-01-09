@@ -1,3 +1,4 @@
+const { timeStamp } = require('console');
 const {DataTypes} = require('sequelize');
 
 module.exports = (sequelize) =>{
@@ -18,5 +19,5 @@ module.exports = (sequelize) =>{
         type: DataTypes.FLOAT,
         allowNull: false,
       },
-    })
+    },{timestamps:false})
 };
