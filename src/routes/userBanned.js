@@ -11,10 +11,10 @@ router.put("/:id", async (req, res) => {
 
   try {
     if (isBanned === true) {
-      const deleteBand = await User.update({ isBanned: false }, { where: { id: id } })
+      const deleteBand = await User.update({ isBanned: true }, { where: { id: id } })
       res.status(200).json(deleteBand);
     } else {
-      const isBannedd = await User.update({ isBanned: true }, { where: { id: id } })
+      const isBannedd = await User.update({ isBanned: false }, { where: { id: id } })
       res.status(200).json(isBannedd);
     }
 
