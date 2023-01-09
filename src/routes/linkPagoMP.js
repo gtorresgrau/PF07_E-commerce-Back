@@ -32,10 +32,10 @@ router.post('/', (req, res) => {
         })),
 
         back_urls: {
-            failure: "http://localhost:3000/sneakers",
-            success: "http://localhost:3000/sneakers"
+            failure: "https://pf-07-e-commerce-front.vercel.app/sneakers",
+            success: "https://pf-07-e-commerce-front.vercel.app/sneakers"
         },
-        notification_url: `https://8d35-2803-9800-9993-7c0a-6341-ad34-ab0e-2afb.sa.ngrok.io/notificar?email=${user.user.email}`,
+        notification_url: `https://pf-07-e-commerce-front.vercel.app/sneakers/notificar?email=${user.user.email}`,
         binary_mode: true
     }
 
