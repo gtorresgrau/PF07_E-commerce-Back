@@ -1,17 +1,23 @@
-const { Router } = require('express');
+const { Router } = require("express");
 const router = Router();
-const {UID}=require('../controllers/getUserByID')
-    
-     
-    router.get('/:id', async ( req,res)=>{
-        const {id} = req.params;
-        try {
-         
-            res.status(200).json(await UID(id))
-        }
+const { allUsers, userById } = require("../controllers/getUsers");
 
-         catch (error) { 
-           res.status(404).send("No se encuentra la zapatilla")
-        }})
+router.get("/", async (req, res) => {
+  
+    const allUsersBD = await allUsers();
+    allUsersBD.length ?
+    res.status(200).json(allUsersBD) 
+    :
+    res.status(404).send("No hay usuarios");
+});
 
-        module.exports=router;
+router.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  if(id) {
+    const userFound = await userById(id);
+    if(!userFound) return res.status(404).send('Usuario no encontrado');
+    res.status(200).json(userFound); 
+  }
+});
+
+module.exports = router;

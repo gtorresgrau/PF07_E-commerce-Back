@@ -19,15 +19,16 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-const { insertData, allU } = require('./src/controllers/insertDataDB.js')
-const {PORT}= process.env;
-require('dotenv').config();
+const { insertData } = require('./src/controllers/insertDataDB.js')
+const { PORT } = process.env;
+const dotenv = require('dotenv');
+dotenv.config()
 
 // Syncing all the models at once.
-conn.sync({force: false}).then(() => {
-  insertData();
-  allU();
+conn.sync({ force: true }).then(async () => {
+  await insertData();
+  //await allU();
   server.listen(PORT, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
+    console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
   });
 });

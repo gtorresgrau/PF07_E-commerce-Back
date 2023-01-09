@@ -1,3 +1,4 @@
+const { timeStamp } = require('console');
 const {DataTypes} = require('sequelize');
 
 module.exports = (sequelize) =>{
@@ -15,7 +16,7 @@ module.exports = (sequelize) =>{
             allowNull:false
         },
         size:{
-            type: DataTypes.ARRAY(DataTypes.INTEGER),
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         image:{
@@ -32,7 +33,7 @@ module.exports = (sequelize) =>{
         },
 
         genre:{
-            type: DataTypes.ENUM("Kids","Women","Men","All"),
+            type: DataTypes.ENUM("Kids","Women","Men"),
             allowNull: false,
         },
         colour:{
@@ -40,8 +41,8 @@ module.exports = (sequelize) =>{
             allowNull: false,
         },
         type:{
-            type: DataTypes.ENUM("Sports", "Running", "Training", "All"),
+            type: DataTypes.ENUM("Sports", "Running", "Training"),
             defaultValue: "Sports"
         }
-    })
+    },{timeStamp:false})
 }

@@ -9,11 +9,11 @@
     "region": "",
     "city":"",
     "phoneNumber": 0,
-    "history":[""],
-    "favourites":[""],
+    "history":"",
+    "guest":false,
+    "loggued": true,
     "isAdmin":false,
-    "superAdmin":false,
-    "isRegistered":false
+    "superAdmin":false
 },
 {
     "username":"gtorresgrau",
@@ -25,11 +25,11 @@
     "region": "",
     "city":"",
     "phoneNumber": 0,
-    "history":[""],
-    "favourites":[""],
+    "history":"",
+    "guest":false,
+    "loggued": true,
     "isAdmin":false,
-    "superAdmin":false,
-    "isRegistered":false
+    "superAdmin":false
 },
 {
     "username":"CarlosRomeroA",
@@ -41,11 +41,11 @@
     "region": "",
     "city":"",
     "phoneNumber": 0,
-    "history":[""],
-    "favourites":[""],
+    "history":"",
+    "guest":false,
+    "loggued": true,
     "isAdmin":false,
-    "superAdmin":false,
-    "isRegistered":false
+    "superAdmin":false
 },
 {
     "username":"Pedrox20",
@@ -57,11 +57,11 @@
     "region": "",
     "city":"",
     "phoneNumber": 0,
-    "history":[""],
-    "favourites":[""],
+    "history":"",
+    "guest":false,
+    "loggued": true,
     "isAdmin":false,
-    "superAdmin":false,
-    "isRegistered":false
+    "superAdmin":false
 },
 {
     "username":"hnavas",
@@ -73,11 +73,11 @@
     "region": "",
     "city":"",
     "phoneNumber": 0,
-    "history":[""],
-    "favourites":[""],
+    "history":"",
+    "guest":false,
+    "loggued": true,
     "isAdmin":false,
-    "superAdmin":false,
-    "isRegistered":false
+    "superAdmin":false
 },
 {
     "username":"Arux26",
@@ -89,11 +89,11 @@
     "region": "",
     "city":"",
     "phoneNumber": 0,
-    "history":[""],
-    "favourites":[""],
+    "history":"",
+    "guest":false,
+    "loggued": true,
     "isAdmin":false,
-    "superAdmin":false,
-    "isRegistered":false
+    "superAdmin":false
 },
 {
     "username":"ezeoli",
@@ -105,10 +105,10 @@
     "region": "",
     "city":"",
     "phoneNumber": 0,
-    "history":[""],
-    "favourites":[""],
+    "history":"",
+    "guest":false,
+    "loggued": true,
     "isAdmin":false,
-    "superAdmin":false,
-    "isRegistered":false
+    "superAdmin":false
 }
 ]

@@ -1,4 +1,4 @@
-const { Sneakers } = require("../db");
+const { Sneakers, Review } = require("../db");
 
 
 
@@ -17,9 +17,8 @@ const sneakerId = async (id) => {
     model:sneakerId.model,
     genre:sneakerId.genre,
     colour:sneakerId.colour,
-    type:sneakerId.type
-};
-
+    type:sneakerId.type,
+  };
   return sneakerID;
 };
 module.exports = { sneakerId };

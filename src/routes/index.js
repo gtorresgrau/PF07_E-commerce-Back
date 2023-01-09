@@ -2,15 +2,28 @@ const { Router } = require('express');
 const router = Router();
 
 const sneakers = require('./sneakers');
-const filterBrand = require('./filterBrand');
 const insert = require('./postSneaker');
 const sneaker = require('./getSneaker');
-const users = require('./users');
+const rawusers = require('./rawUsers');
 const filter = require('./filterAnidado');
-const user= require("./getUserID");
-const payment = require('./postPaymentMP');
+const getUser = require("./getUserID");
 
-const sneakerName= require("./sneakerName");
+
+
+const sneakerUpdate= require("./sneakerUpdate");
+const userToAdmin= require("./userToAdmin");
+
+
+const postReviews = require('./postReviews');
+const getReviews = require('./getReviews');
+const userBanned = require("./userBanned");
+const userLoggued = require("./userLoggued");
+const sneakerName = require("./sneakerName");
+const postUser = require("./postUsers");
+const upload = require('./upload');
+const pagoo = require('./linkPagoMP');
+const notificar = require('./notificar');
+const postEmail = require('./postEmail');
 
 
 // const axios = require("axios");
@@ -19,19 +32,28 @@ const sneakerName= require("./sneakerName");
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
-
+router.use("/userloggued", userLoggued);
 router.use('/sneakers', sneakers);
-
-
+router.use("/postuser", postUser);
+router.use("/user", getUser);
 router.use("/sneakerName", sneakerName);
-
-router.use('/brand', filterBrand);
 router.use('/sneakers', insert);
 router.use('/sneaker', sneaker);
-router.use('/users', users); 
+
+router.use('/rawusers', rawusers); 
+
 router.use("/filter", filter);
-router.use("/user", user);
-router.use('https://pf-07-e-commerce-front.vercel.app/payment', payment);
+router.use('/upload', upload);
+router.use('/payment', pagoo);
+router.use("/userbanned", userBanned);
+
+router.use("/useradmin",userToAdmin);
+router.use("/sneakerupdate", sneakerUpdate);
+
+router.use('/reviews', postReviews);
+router.use('/reviews', getReviews);
+router.use('/notificar', notificar);
+router.use('/sendEmail', postEmail);
 
 
 module.exports = router;

@@ -1,67 +1,54 @@
 const { DataTypes } = require("sequelize");
 
-module.exports = (sequelize) =>{
-    sequelize.define('user',{
+module.exports = (sequelize) => {
+    sequelize.define('user', {
         id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
+            allowNull: false,
             primaryKey: true,
-            autoIncrement: true
-          },
-        username:{
-            type: DataTypes.STRING,
-            allowNull:true,
         },
-        fullName:{
+        userName: {
+            type: DataTypes.STRING,
+        },
+        fullName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        image: {
+            type: DataTypes.STRING,
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        shippingAddress: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        password:{ 
+        country: {
             type: DataTypes.STRING,
-            allowNull:true,
         },
-        image:{
+        city: {
             type: DataTypes.STRING,
-            allowNull:true
         },
-        emailAddress:{
-            type:DataTypes.STRING,
-            allowNull:true,
-        },
-        homeAddress:{
-            type: DataTypes.STRING,
-            allowNull:true,
-        },
-        region:{
-            type: DataTypes.STRING,
-            allowNull:true,
-        },
-        city:{
-            type: DataTypes.STRING,
-            allowNull:true,
-        },
-        phoneNumber:{
+        phoneNumber: {
             type: DataTypes.INTEGER,
-            allowNull:true,
         },
-        history:{
+        orders: {
             type: DataTypes.ARRAY(DataTypes.STRING),
-            allowNull:true,
         },
-        favourites:{
-            type: DataTypes.ARRAY(DataTypes.STRING),
-            allowNull: true,
-        },
-        isAdmin:{
+        isAdmin: {
             type: DataTypes.BOOLEAN,
-            allowNull: true,
+            defaultValue: false,
         },
-        superAdmin:{
+        isBanned: {
             type: DataTypes.BOOLEAN,
-            allowNull: true,
+            defaultValue: false,
         },
-        isRegistered:{
+        superAdmin: {
             type: DataTypes.BOOLEAN,
-            allowNull:true,
+            defaultValue: false,
         }
-})
+    })
 }

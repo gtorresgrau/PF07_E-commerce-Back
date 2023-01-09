@@ -13,7 +13,8 @@ const insertSneaker = async ({title, price, image, description, size, stock, bra
         brand, 
         genre, 
         colour,
-        type
+        type,
+      
       }
     })
     return status;

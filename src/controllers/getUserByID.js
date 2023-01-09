@@ -17,11 +17,12 @@ const UID = async (id) => {
     city: userId.city,
     phoneNumber: userId.phoneNumber,
     history: userId.history,
-    favourites: userId.favourites,
+    guest: userId.guest,
+    loggued: userId.loggued,
     isAdmin: userId.isAdmin,
     superAdmin: userId.superAdmin,
-    isRegistered: userId.isRegistered,
 };
   return uID;
 };
+
 module.exports = { UID };
