@@ -1,54 +1,54 @@
 const { DataTypes } = require("sequelize");
 
-module.exports = (sequelize) =>{
-    sequelize.define('user',{
+module.exports = (sequelize) => {
+    sequelize.define('user', {
         id: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
             allowNull: false,
             primaryKey: true,
         },
-        userName:{
+        userName: {
             type: DataTypes.STRING,
         },
-        fullName:{
+        fullName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        image:{
+        image: {
             type: DataTypes.STRING,
         },
-        email:{
-            type:DataTypes.STRING,
-            allowNull:false,
-        },
-        shippingAddress:{
+        email: {
             type: DataTypes.STRING,
-            allowNull:true,
+            allowNull: false,
         },
-        country:{
+        shippingAddress: {
             type: DataTypes.STRING,
+            allowNull: true,
         },
-        city:{
+        country: {
             type: DataTypes.STRING,
         },
-        phoneNumber:{
+        city: {
+            type: DataTypes.STRING,
+        },
+        phoneNumber: {
             type: DataTypes.INTEGER,
         },
-        orders:{
+        orders: {
             type: DataTypes.ARRAY(DataTypes.STRING),
         },
-        isAdmin:{
+        isAdmin: {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
         },
-        isBanned:{
-        type: DataTypes.BOOLEAN,
-        defaultValue: false,
+        isBanned: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
         },
-        superAdmin:{
+        superAdmin: {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
         }
-})
+    })
 }
