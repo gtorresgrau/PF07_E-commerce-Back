@@ -20,7 +20,7 @@ router.post('/', (req, res) => {
             surname: user.family_name,
             email: user.email,
 
-            
+
         },
 
         items: data.map(e => ({
@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
             failure: "http://localhost:3000/sneakers",
             success: "http://localhost:3000/sneakers"
         },
-        notification_url: `https://2c49-2803-9800-9993-7c0a-102d-3989-2956-1cc2.sa.ngrok.io/notificar?email=${user.user.email}`,
+        notification_url: `https://8d35-2803-9800-9993-7c0a-6341-ad34-ab0e-2afb.sa.ngrok.io/notificar?email=${user.user.email}`,
         binary_mode: true
     }
 

@@ -11,10 +11,10 @@ router.put("/:id", async (req, res) => {
 
   try {
     if (isAdmin === true) {
-      const deleteAdmin = await User.update({ isAdmin: false }, { where: { id: id } })
+      const deleteAdmin = await User.update({ isAdmin: true }, { where: { id: id } })
       res.status(200).json(deleteAdmin);
     } else {
-      const userToAdmin = await User.update({ isAdmin: true }, { where: { id: id } })
+      const userToAdmin = await User.update({ isAdmin: false }, { where: { id: id } })
       res.status(200).json(userToAdmin);
     }
 
