@@ -1,28 +1,26 @@
-const {Router}= require("express");
+const { Router } = require("express");
 
-const router= Router();
+const router = Router();
 
-const {User}= require("../db");
+const { User } = require("../db");
 
-router.put("/users/:id/isAdmin", async(req,res)=>{
-    
-    const id = req.params.id;
-    const {fullName, isAdmin}= req.body;
-    
-    try{
-        if (!id || !fullName || isAdmin === undefined) {
-            return res.status(400).json("You must complete this field before!");
-          }
+router.put("/:id", async (req, res) => {
 
-        
-        const userToAdmin= await User.update({ isAdmin }, { where: { id } })
-    .then(() =>  res.status(200).json(userToAdmin));
+  const id = req.params.id;
+  const { isAdmin } = req.body
 
-        
-        
-    }catch(error){
-        return res.status(404).json({error:error.message});
+  try {
+    if (isAdmin === true) {
+      const deleteAdmin = await User.update({ isAdmin: true }, { where: { id: id } })
+      res.status(200).json(deleteAdmin);
+    } else {
+      const userToAdmin = await User.update({ isAdmin: false }, { where: { id: id } })
+      res.status(200).json(userToAdmin);
     }
+
+  } catch (error) {
+    return res.status(404).json({ error: error.message });
+  }
 })
 
-module.exports= router;
+module.exports = router;

@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 
 const sendEmail = async (email) => {
+  console.log('sendEmail:',email)
   const config = {
     host: 'smtp.gmail.com',
     port: 587,
@@ -13,14 +14,14 @@ const sendEmail = async (email) => {
   const mensaje = {
     from: 'arieltrangoni1@gmail.com',
     to: email,
-    subject: 'Correo de pruebas',
+    subject: 'se realizo la compra correctacmenet',
     text: 'Se realizo la compra exitosamente en Henry Sneakers'
   }
 
   const transport = nodemailer.createTransport(config);
 
   const info = await transport.sendMail(mensaje);
-  console.log(info)
+
 };
 
 module.exports = {

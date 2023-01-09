@@ -18,7 +18,7 @@ const insertData = async () => {
         genre: s.genre, 
         colour: s.colour,
         type: s.type,
-        rating: s.rating
+       
       }
     })
   }) 
