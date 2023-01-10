@@ -25,6 +25,7 @@ const pagoo = require('./linkPagoMP');
 const notificar = require('./notificar');
 const postEmail = require('./postEmail');
 const userUpdate = require('./userUpdate');
+const deleting = require('./deleteSneaker');
 
 
 // const axios = require("axios");
@@ -56,6 +57,7 @@ router.use('/reviews', postReviews);
 router.use('/reviews', getReviews);
 router.use('/notificar', notificar);
 router.use('/sendEmail', postEmail);
+router.use('/deleting', deleting);
 
 
 module.exports = router;
