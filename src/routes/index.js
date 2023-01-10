@@ -24,6 +24,7 @@ const upload = require('./upload');
 const pagoo = require('./linkPagoMP');
 const notificar = require('./notificar');
 const postEmail = require('./postEmail');
+const userUpdate = require('./userUpdate');
 
 
 // const axios = require("axios");
@@ -39,6 +40,7 @@ router.use("/user", getUser);
 router.use("/sneakerName", sneakerName);
 router.use('/sneakers', insert);
 router.use('/sneaker', sneaker);
+router.use('/userUpdate', userUpdate);
 
 router.use('/rawusers', rawusers); 
 
