@@ -2,7 +2,7 @@ const { Router } = require('express');
 const mercadopago = require('mercadopago');
 const router = Router();
 const { sendEmail } = require('../controllers/sendEmail');
-
+const { Orders } = require("../db");
 mercadopago.configure({access_token:process.env.ACCESS_TOKEN})
 
 
@@ -21,8 +21,18 @@ router.post('/',async(req,res)=>{
        
        console.log('notificar: ',pay)
        console.log(`status: ${pay.body.status}`);
+
        if(pay.body.status==='approved'){
-           sendEmail(query.email)
+           sendEmail(query.email);
+           const orderDb = await Orders.create({
+            detail: JSON.stringify(req.body),
+            payment: JSON.stringify(payment),
+            user_id: req.user.id
+        });
+        res.status(200).json({ orderDb });
+    }  else {
+        res.send();
+    }
        }
     }
 
@@ -32,10 +42,9 @@ router.post('/',async(req,res)=>{
      
     
     
-    res.send();
 
      
-})
+)
  
 
 

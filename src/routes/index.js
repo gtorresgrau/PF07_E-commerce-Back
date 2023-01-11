@@ -26,7 +26,7 @@ const notificar = require('./notificar');
 const postEmail = require('./postEmail');
 const userUpdate = require('./userUpdate');
 const deleting = require('./deleteSneaker');
-
+const purchases = require('./purchase');
 
 // const axios = require("axios");
 //const SneaksAPI = require('sneaks-api');
@@ -58,6 +58,6 @@ router.use('/reviews', getReviews);
 router.use('/notificar', notificar);
 router.use('/sendEmail', postEmail);
 router.use('/deleting', deleting);
-
+router.use('/purchases', purchases);
 
 module.exports = router;

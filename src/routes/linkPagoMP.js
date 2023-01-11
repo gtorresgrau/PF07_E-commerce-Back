@@ -1,4 +1,5 @@
 const { Router } = require('express');
+
 const mercadopago = require('mercadopago');
 const router = Router();
 
@@ -48,12 +49,7 @@ router.post('/', (req, res) => {
             console.error(e);
         })
 
-    setTimeout(() => {
-        console.log(`se envio un email a ${user.user.email}`);
-
-        sendEmail(user.user.email)
-
-    }, "6000")
+    
 });
 
 
