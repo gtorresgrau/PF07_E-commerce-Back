@@ -6,6 +6,7 @@ module.exports = (sequelize) =>{
       sneakerId: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        primaryKey:true,
       },
       userId: {
         type: DataTypes.STRING,

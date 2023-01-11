@@ -2,7 +2,7 @@ const { timeStamp } = require('console');
 const {DataTypes} = require('sequelize');
 
 module.exports = (sequelize) =>{
-    sequelize.define('sneakers',{
+    sequelize.define('Sneakers',{
         title:{
             type: DataTypes.STRING,
             allowNull:false 
@@ -43,6 +43,6 @@ module.exports = (sequelize) =>{
         type:{
             type: DataTypes.ENUM("Sports", "Running", "Training"),
             defaultValue: "Sports"
-        }
-    },{timeStamp:false})
+        },
+    },{timestamps:false})
 }
