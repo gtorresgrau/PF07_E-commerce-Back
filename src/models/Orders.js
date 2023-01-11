@@ -1,7 +1,7 @@
 const {DataTypes}= require("sequelize");
 
 module.exports= (sequelize)=>{
-    sequelize.define("order",{
+    sequelize.define("Order",{
         detail:{
             type: DataTypes.STRING,
             allowNull: true
@@ -10,5 +10,5 @@ module.exports= (sequelize)=>{
             type: DataTypes.STRING,
             allowNull: true
         }
-    })
+    },{timestamp:false})
 }

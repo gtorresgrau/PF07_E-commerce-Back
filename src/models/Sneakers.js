@@ -44,5 +44,5 @@ module.exports = (sequelize) =>{
             type: DataTypes.ENUM("Sports", "Running", "Training"),
             defaultValue: "Sports"
         }
-    },{timeStamp:false})
+    },{timestamp:false})
 }
