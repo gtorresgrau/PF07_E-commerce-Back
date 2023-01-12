@@ -16,3 +16,5 @@ router.get('/', async (req, res) => {
         res.status(500).json({ error: 'Error al obtener el historial de compras' });
     }
 });
+
+module.exports = router;
