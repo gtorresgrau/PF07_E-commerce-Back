@@ -23,9 +23,10 @@ const postUser = require("./postUsers");
 const upload = require('./upload');
 const pagoo = require('./linkPagoMP');
 const notificar = require('./notificar');
-const postEmail = require('./postEmail');
+// const postEmail = require('./postEmail');
 const userUpdate = require('./userUpdate');
 const deleting = require('./deleteSneaker');
+const response = require('./response');
 
 
 // const axios = require("axios");
@@ -43,7 +44,7 @@ router.use('/sneakers', insert);
 router.use('/sneaker', sneaker);
 router.use('/userUpdate', userUpdate);
 
-router.use('/rawusers', rawusers); 
+router.use('/rawusers', rawusers);
 
 router.use("/filter", filter);
 router.use('/upload', upload);
@@ -56,8 +57,9 @@ router.use("/sneakerupdate", sneakerUpdate);
 router.use('/reviews', postReviews);
 router.use('/reviews', getReviews);
 router.use('/notificar', notificar);
-router.use('/sendEmail', postEmail);
+// router.use('/sendEmail', postEmail);
 router.use('/deleting', deleting);
+router.use('/response', response);
 
 
 module.exports = router;
