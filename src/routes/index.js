@@ -7,6 +7,7 @@ const sneaker = require('./getSneaker');
 const rawusers = require('./rawUsers');
 const filter = require('./filterAnidado');
 const getUser = require("./getUserID");
+const getOrdes = require("./getOrders");
 
 
 
@@ -45,7 +46,7 @@ router.use('/sneaker', sneaker);
 router.use('/userUpdate', userUpdate);
 
 router.use('/rawusers', rawusers);
-
+router.use("/orders", getOrdes);
 router.use("/filter", filter);
 router.use('/upload', upload);
 router.use('/payment', pagoo);
