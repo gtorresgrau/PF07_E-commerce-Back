@@ -50,7 +50,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 // Para relacionarlos hacemos un destructuring
 const { Sneakers, User, Orders } = sequelize.models;
 //const {Cart}= sequelize.models;
-const {Review} = sequelize.models;
+const { Review } = sequelize.models;
 
 
 // Aca vendrian las relaciones
@@ -59,8 +59,8 @@ const {Review} = sequelize.models;
 //1-N
 // User.hasMany(Sneakers, {as: "sneakerOwner"});
 // Sneakers.belongsTo(User, {as: "sneakerOwner"});
-Review.belongsTo(Sneakers,{as: "sneakerReview"});
-Sneakers.hasMany(Review,{as:"sneakerReview"});
+Review.belongsToMany(Sneakers, { through: "sneakerReview" });
+Sneakers.belongsToMany(Review, { through: "sneakerReview" });
 
 // //1-1
 // User.hasOne(Cart, {as:"cartUser", foreignKey:"cartUserId"})
