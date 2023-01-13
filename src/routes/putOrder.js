@@ -10,7 +10,7 @@ router.put("/:id", async (req, res) => {
     const { email, delivered } = req.body
 
     try {
-        if (delivered === false) {
+        if (delivered === true) {
             const statusAprob = await Orders.update({ delivered: true }, { where: { id: id } })
             sendEmail2(email);
             res.status(200).json(statusAprob);
