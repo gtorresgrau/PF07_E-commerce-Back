@@ -1,19 +1,20 @@
 const { Orders } = require("../db");
 
-const createOrder = async({client_id, prefId, items, status, payer, email})=>{
+const createOrder = async ({ client_id, prefId, items, status, payer, email, delivered }) => {
     const [newOrder] = await Orders.findOrCreate({
-        where:{email: email},
-        defaults:{
+        where: { prefId: prefId },
+        defaults: {
             email,
             client_id,
             prefId,
             items,
-            status,
-            payer
+            status: "approved",
+            payer,
+            delivered
         }
     })
 
-return newOrder;
+    return newOrder;
 }
 
 module.exports = { createOrder };

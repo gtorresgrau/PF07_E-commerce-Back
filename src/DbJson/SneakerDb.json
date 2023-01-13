@@ -756,30 +756,6 @@
     "type": "Training"
   },
   {
-    "title": "FILA EURO JOGGER SPORT",
-    "price": 16,
-    "image": "https://filaar.vtexassets.com/arquivos/ids/6389229-1600-auto?v=638047169731170000&width=1600&height=auto&aspect=true",
-    "description": "With design elements inspired by the movement and motion of city life, the Wild Rider Layers Unisex. With design elements inspired by the movement and motion of city life, the Wild Rider Layers Unisex Sneakers brings a fresh new dimension to the iconic Rider family.",
-    "size": 38,
-    "stock": 67,
-    "brand": "Fila",
-    "genre": "Men",
-    "colour": "Black",
-    "type": "Sports"
-  },
-  {
-    "title": "FILA FORCE MUJER",
-    "price": 16,
-    "image": "https://filaar.vtexassets.com/arquivos/ids/6306776-1600-auto?v=638023191600430000&width=1600&height=auto&aspect=true",
-    "description": "With design elements inspired by the movement and motion of city life, the Wild Rider Layers Unisex. With design elements inspired by the movement and motion of city life, the Wild Rider Layers Unisex Sneakers brings a fresh new dimension to the iconic Rider family.",
-    "size": 38,
-    "stock": 67,
-    "brand": "Fila",
-    "genre": "Women",
-    "colour": "Black",
-    "type": "Running"
-  },
-  {
     "title": "FILA EURO JOGGER SPORT MEN",
     "price": 16,
     "image": "https://filaar.vtexassets.com/arquivos/ids/6382211-1600-auto?v=638043913419770000&width=1600&height=auto&aspect=true",
@@ -813,18 +789,6 @@
     "brand": "Fila",
     "genre": "Men",
     "colour": "Blue",
-    "type": "Training"
-  },
-  {
-    "title": "FILA RACER ADVANTAGE MUJER",
-    "price": 16,
-    "image": "https://filaar.vtexassets.com/arquivos/ids/6410903-1600-auto?v=638049969231070000&width=1600&height=auto&aspect=true",
-    "description": "With design elements inspired by the movement and motion of city life, the Wild Rider Layers Unisex. With design elements inspired by the movement and motion of city life, the Wild Rider Layers Unisex Sneakers brings a fresh new dimension to the iconic Rider family.",
-    "size": 38,
-    "stock": 67,
-    "brand": "Fila",
-    "genre": "Women",
-    "colour": "Black",
     "type": "Training"
   },
   {

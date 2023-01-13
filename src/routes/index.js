@@ -8,7 +8,7 @@ const rawusers = require('./rawUsers');
 const filter = require('./filterAnidado');
 const getUser = require("./getUserID");
 const getOrdes = require("./getOrders");
-
+const putOrder = require("./putOrder")
 
 
 const sneakerUpdate = require("./sneakerUpdate");
@@ -45,6 +45,8 @@ router.use('/sneakers', insert);
 router.use('/sneaker', sneaker);
 router.use('/userUpdate', userUpdate);
 
+
+router.use('/updateOrder', putOrder);
 router.use('/rawusers', rawusers);
 router.use("/orders", getOrdes);
 router.use("/filter", filter);
