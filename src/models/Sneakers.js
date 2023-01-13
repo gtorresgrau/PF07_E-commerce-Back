@@ -1,4 +1,4 @@
-const { timeStamp } = require('console');
+
 const {DataTypes} = require('sequelize');
 
 module.exports = (sequelize) =>{
@@ -44,5 +44,5 @@ module.exports = (sequelize) =>{
             type: DataTypes.ENUM("Sports", "Running", "Training"),
             defaultValue: "Sports"
         }
-    },{timeStamp:false})
+    },{timestamp:false})
 }
