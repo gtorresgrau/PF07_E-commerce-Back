@@ -29,7 +29,7 @@ const sendEmail2 = async (email) => {
     const transport = nodemailer.createTransport(config);
 
     const info = await transport.sendMail(mensaje);
-    console.log("SENDEMAIL", info)
+    //console.log("SENDEMAIL", info)
 };
 
 //sendEmail2()

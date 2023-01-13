@@ -1,32 +1,36 @@
-const {DataTypes}= require("sequelize");
+const { DataTypes } = require("sequelize");
 
-module.exports= (sequelize)=>{
-    sequelize.define("Orders",{
-        email:{
+module.exports = (sequelize) => {
+    sequelize.define("Orders", {
+        email: {
             type: DataTypes.STRING,
             allowNull: true
         },
-        client_id:{
+        client_id: {
             type: DataTypes.STRING,
             allowNull: true
         },
-        prefId:{
+        prefId: {
             type: DataTypes.STRING,
             allowNull: true
         },
-        items:{
+        items: {
             type: DataTypes.ARRAY(DataTypes.JSON),
             allowNull: true
         },
-        status:{
+        status: {
             type: DataTypes.STRING,
             allowNull: true
         },
-        payer:{
+        payer: {
             type: DataTypes.JSON,
             allowNull: true
+        },
+        delivered: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
         }
-    },{timestamp:false})
+    }, { timestamp: false })
 }
 
 
