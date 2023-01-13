@@ -35,11 +35,13 @@ if (!clientOriginUrl) {
 const clientOrigins = [ 
     'http://localhost:3000/',
     'http://localhost:3001/',
-    'https://pf-07-e-commerce-front.vercel.app/',
+    'https://pf-07-e-commerce-front.vercel.app/:path*',
     'https://pf-07-e-commerce-front.vercel.app/sneakers',
+    'https://pf-07-e-commerce-front.vercel.app/admin',
+    'https://pf-07-e-commerce-front.vercel.app/profile',
+    'https://pf-07-e-commerce-front.vercel.app/filter',
 
-    'https://pf07e-commerce-back-production.up.railway.app/sneakers',
-    'https://pf07e-commerce-back-production.up.railway.app/', 
+    'https://pf07e-commerce-back-production.up.railway.app/:path*', 
     'https://pf07e-commerce-back-production.up.railway.app/payment', 
     'https://pf07e-commerce-back-production.up.railway.app/postuser', 
     'https://pf07e-commerce-back-production.up.railway.app/user',
