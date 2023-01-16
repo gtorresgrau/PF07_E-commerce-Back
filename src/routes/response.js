@@ -26,7 +26,8 @@ router.post("/", async (req,res)=>{
         prefId,
         items,
         status:'pending',
-        payer
+        payer,
+        delivered:false
     });
 
     console.log(newOrder);

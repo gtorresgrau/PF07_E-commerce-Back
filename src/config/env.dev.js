@@ -41,7 +41,7 @@ const clientOrigins = [
  'https://pf-07-e-commerce-front.vercel.app/sneakers/notificar',
  'https://pf-07-e-commerce-front.vercel.app',
 
- 'https://pf07e-commerce-back-production.up.railway.app/',
+ 'https://pf07e-commerce-back-production.up.railway.app',
  'https://pf07e-commerce-back-production.up.railway.app/payment', 
  'https://pf07e-commerce-back-production.up.railway.app/postuser' ];
 
