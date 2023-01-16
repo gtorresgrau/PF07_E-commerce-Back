@@ -32,6 +32,7 @@ if (!clientOriginUrl) {
 }
 
 
+
 const clientOrigins = [
  'http://localhost:4040',
  'http://localhost:3000/sneakers', 
@@ -44,6 +45,8 @@ const clientOrigins = [
  'https://pf07e-commerce-back-production.up.railway.app',
  'https://pf07e-commerce-back-production.up.railway.app/payment', 
  'https://pf07e-commerce-back-production.up.railway.app/postuser' ];
+
+
 
 
 module.exports = {
