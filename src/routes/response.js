@@ -17,17 +17,18 @@ router.post("/", async (req,res)=>{
   const payer = data[1]
   console.log('payer:',payer)
 
-  const email = payer.emailAddress
+  
+
 
   try{
     const newOrder = await createOrder({
-        email,
+        emailAddress,
         client_id,
         prefId,
         items,
         status:'pending',
         payer,
-        delivered:false
+        delivered: false
     });
 
     console.log(newOrder);

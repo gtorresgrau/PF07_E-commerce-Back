@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
     sequelize.define("Orders", {
-        email: {
+        emailAddress: {
             type: DataTypes.STRING,
             allowNull: true
         },
