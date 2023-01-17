@@ -1,6 +1,6 @@
 const { Orders } = require("../db");
 
-const createOrder = async ({ client_id, prefId, items, status, payer, emailAddress, delivered }) => {
+const createOrder = async ({ client_id, prefId, items, status, payer, email, delivered }) => {
     
     
 
@@ -8,7 +8,7 @@ const createOrder = async ({ client_id, prefId, items, status, payer, emailAddre
     const [newOrder] = await Orders.findOrCreate({
         where: { prefId: prefId },
         defaults: {
-            emailAddress,
+            email,
             client_id,
             prefId,
             items,
